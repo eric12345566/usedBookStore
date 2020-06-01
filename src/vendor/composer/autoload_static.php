@@ -10,7 +10,6 @@ class ComposerStaticInitbad5774bc7510fc0501dab4d838103a2
         'Database' => __DIR__ . '/../..' . '/db/Database.php',
         'DatabaseAccessObject' => __DIR__ . '/../..' . '/db/DatabaseAccessObject.php',
         'MySQL' => __DIR__ . '/../..' . '/config/MySQL.php',
-        'Test' => __DIR__ . '/../..' . '/lib/test/Test.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
