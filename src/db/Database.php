@@ -1,12 +1,10 @@
 <?php
-  require('./DatabaseAccessObject.php');
-  require('./Mysql.php');
-
 /**
  * 使用單例模式的資料庫連接方式，無論使用多少次都是使用同一個連線
  */
+
 class Database {
-  
+
     private static $instance;
     private function __construct() {
         // 使用 private 建構子避免在外面被意外地初始化
@@ -15,10 +13,10 @@ class Database {
     private static function getInstance() {
         if (!isset(self::$instance)) {
             self::$instance = new DatabaseAccessObject(
-              MySQL::ADDRESS,
-              MySQL::USERNAME,
-              MySQL::PASSWORD,
-              MySQL::DATABASE
+            MySQL::ADDRESS,
+            MySQL::USERNAME,
+            MySQL::PASSWORD,
+            MySQL::DATABASE
             );
         }
     }

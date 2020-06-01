@@ -1,5 +1,5 @@
 <?php
-  require('./Database.php');
+  require 'vendor/autoload.php';
 
   $db = Database::get();
 ?>

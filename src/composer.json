@@ -1,0 +1,16 @@
+{
+    "name": "eric/src",
+    "authors": [
+        {
+            "name": "Eric Shih",
+            "email": "eric12345566@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap":[
+            "db",
+            "config"
+        ]
+    }
+}
