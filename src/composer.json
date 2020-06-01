@@ -10,7 +10,8 @@
     "autoload": {
         "classmap":[
             "db",
-            "config"
+            "config",
+            "lib"
         ]
     }
 }
