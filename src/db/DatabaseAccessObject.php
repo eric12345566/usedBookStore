@@ -8,7 +8,7 @@
     private $last_id = 0;
     private $last_rows_counts = 0;
     private $error_message = "";
-    
+
     /**
      * 當被new時，建立資料庫連線
      */
@@ -29,7 +29,7 @@
           //show error
           echo '<p class="bg-danger">'.$e->getMessage().'</p>';
           exit;
-      } 
+      }
     }
 
 
@@ -39,7 +39,7 @@
     public function __destruct() {
         $this->db = null;
     }
-    
+
     /**
      * 回傳整個 db 物件
      */
@@ -53,7 +53,7 @@
      * 1. SQL內使用 :name 當作變數，data_array就必須是('name'=>value)
      * 2. 使用 ? 當作變數，data_array可以為單純陣列
      * 不可合併使用兩種方式。
-     * 
+     *
      * 參考：https://www.runoob.com/php/pdo-prepare.html
      */
     public function execute($sql = null, $data_array = array()) {

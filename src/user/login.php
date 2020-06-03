@@ -12,8 +12,6 @@
       <input type="password" name="password"><br>
       <input type="submit" value="登入">
     </form>
+      <a href="forget.php"> 忘記密碼</a> <br>
   </body>
 </html>
-
-
-
