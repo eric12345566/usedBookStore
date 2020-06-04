@@ -18,7 +18,10 @@
   $university = $_POST['university'];
   $major = $_POST['major'];
   $stdId = $_POST['stdId'];
+  $stdId_img = $_POST['stdId_img'];
   
+  $filename = $_FILES["stdId_img"]["type"];
+
   //判斷是否填寫
   if($name == "" || $password == "") {
     echo "<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."請填寫完成！"."\"".")".";"."</script>";
@@ -33,11 +36,11 @@
           if(preg_match('/^[A-Za-z0-9]*[A-Z]+[A-Za-z0-9]*[0-9]+[A-Za-z0-9]*$/',$stdId)) {
             if($gender == '男' || $gender == '女' ) {
               if(preg_match("/^[\x{4e00}-\x{9fa5}]+$/u",$name)) {
-                if(in_array($extension,array('jpg','png','gif'))) {
+                if($filename != ".jpg") {
                 $repeat_email = $db->execute("SELECT * FROM generaluser WHERE email = ? ;", array($email));
                 if($db->getRowCount() == 0) {
                     $hash_password = password_hash($password, PASSWORD_BCRYPT);
-                    $result = $db->execute("INSERT INTO generaluser (username, email, password, name, phonenumber, gender, bdate, university, major, stdId ,stdId_img) VALUES ( ?,?,?,?,?,?,?,?,?,?,?)",array($username,$email,$hash_password,$name,$phonenumber,$gender,$bdate,$university,$major,$stdId,$file));
+                    $result = $db->execute("INSERT INTO generaluser (username, email, password, name, phonenumber, gender, bdate, university, major, stdId ,stdId_img) VALUES ( ?,?,?,?,?,?,?,?,?,?,?)",array($username,$email,$hash_password,$name,$phonenumber,$gender,$bdate,$university,$major,$stdId,$stdId_img));
                     echo $db->getErrorMessage();
                     if($db->getRowCount()) {
                       echo "註冊成功";

@@ -30,7 +30,7 @@
             </select>  
             <p><label>學號</label><input type="text" name="stdId" required></p>
             <form action = register-api.php method = post enctype = multipart/form-data>
-            學生證上傳<br><input type=file name=stdId_img > <br>
+            學生證上傳<br><input type=file name=stdId_img accept=".jpg , .gif" > <br>
             <input type="submit"  value="確認" onclick="login();"/>
             </form>
                 <div>
