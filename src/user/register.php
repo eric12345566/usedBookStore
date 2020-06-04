@@ -12,7 +12,7 @@
             <p><label>Email</label><input type="email" name="email"  required></p>
             <p><label>姓名</label><input type="text" name="name" required></p>
             <p><label>密碼</label><input type="password" name="password"  required></p>
-            <p><label>手機</label><input type="tel" name="phone" required></p>
+            <p><label>手機</label><input type="tel" name="phonenumber" required></p>
             性別<select name="gender">
             <option value="男">男</option>
 　          <option value="女">女</option>
@@ -27,9 +27,11 @@
 　          <option value="電機系">電機系</option>
             </select>  
             <p><label>學號</label><input type="text" name="stdId" required></p>
-
+            <form action = register-api.php method = post enctype = multipart / form-data>
+            學生證上傳<br><input type=file name=stdId_img > <br>
+            <input type="submit"  value="確認" />
+            </form>
                 <div>
-                    <input type="submit"  value="確認" />
                 </div>
         </form>
     </div>
