@@ -6,8 +6,12 @@
   $token = $_GET["token"];
   $result = $db->execute("SELECT * FROM UserEP WHERE link_no = ?;", array($token));
   if ($db->getRowCount()) {
-      echo "驗證成功";
-      header("Location:set_password.php");
+      if (!$result[0]["used"]) {
+          echo "驗證成功";
+          header("Location:set_password.php");
+      } else {
+          echo "驗證失敗";
+      }
   } else {
       echo "驗證失敗";
   }
