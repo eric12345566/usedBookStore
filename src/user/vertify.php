@@ -4,10 +4,10 @@
   // 獲取資料庫連線 DAO
   $db = Database::get();
   $token = $_GET["token"];
-  $_SESSION['token']= $token;
   $result = $db->execute("SELECT * FROM UserEP WHERE link_no = ?;", array($token));
   if ($db->getRowCount()) {
       if (!$result[0]["used"]) {
+          $_SESSION['token']= $token;
           echo "驗證成功<br>";
           echo "請重設密碼";
       } else {
