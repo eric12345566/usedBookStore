@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/Book_information.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <section id="header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-6">
+            <section id="images">
+              <div id="demo" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      class="d-block w-100 h-55"
+                      src="./image/card1.jpg"
+                      width="700"
+                      height="450"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100 h-55"
+                      src="./image/card2.jpg"
+                      width="700"
+                      height="450"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100 h-55"
+                      src="./image/card3.jpg"
+                      width="700"
+                      height="450"
+                    />
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-md-4">
+            <section id="imagesinformation">
+              <p class="booktitle">系統程式- System Software</p>
+              <div id="bookinformation">
+                作者:
+                <br />ISBN: <br />出版年份: <br />出版商: <br />語言:
+                <p>書籍分類:</p>
+                <br />
+              </div>
+
+              <div id="bookinformation">
+                <p class="Lab">書籍狀況</p>
+                <i class="fa">&#xf046;</i>
+                無破損、無缺頁
+                <br />
+                <i class="fa">&#xf046;</i>
+                內容有記筆記
+                <p></p>
+                <br />
+              </div>
+
+              <div id="bookinformation">
+                <p class="Lab">銷售狀況</p>
+                庫存:
+                <br />交貨方式 <br /><i class="fa">&#xf06a;</i>
+                <a class="fa" href="#">檢舉賣家</a>
+                <p></p>
+              </div>
+
+              <div>
+                價格:&nbsp;&nbsp;NT$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                  id="price"
+                  >300</a
+                >
+                <button
+                  type="button"
+                  id="paybuttom"
+                  class="btn btn-primary btn-lg"
+                >
+                  立即購買
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-6">
+            <p class="booktitle">書本簡介</p>
+            <br />
+            <p>
+              Windows API程式設計的權威指引 內容完全升級到Windows 7、Windows
+              Server 2008和Windows Vista<br /><br />
+              【Windows系統程式設計
+              第四版】涵蓋64位元程式設計、平⾏運算、多核系統，以及其他重要議題，範例程式碼已在
+              32位元及64位元版本、單及多處理器系統、Windows 7/Vista/XP及Windows
+              Server 2008測試及偵錯。書中提供許多
+              範例執⾏畫⾯，讓讀者更瞭解程式的運作。<br /><br />
+              作者在API層級有系統的討論Windows，提出Windows程式設計師確切需要的主題，並且強調Windows在現實世界應⽤
+              的實際⾏為和互動能⼒。⼀開始以單⾏程作為討論Windows
+              API的範例，逐步將範例發展成功能更多的多緒程環境。本
+              書的主題包括檔案系統、記憶體管理、例外、⾏程、緒程、同步控制、⾏程間通訊、Windows
+              Services和安全性。
+            </p>
+          </div>
+          <a href="#">
+            <div class="col-md-5">
+              <div id="card">
+                <div class="card mb-3">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img src="./image/cardperson.jpg" style="width: 8em;
+                      height: 8em;
+                      border-radius: 50%;" class="card-img">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <div class="seller-title">賣家資訊</div>
+                        <div class="sellername">Eric</div>
+                        <div class="sellerDepartment">
+                          <small>逢甲大學&nbsp;&nbsp;資訊工程學系</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
