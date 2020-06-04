@@ -1,0 +1,13 @@
+section#number {
+  margin-top: 1em;
+}
+
+
+section#number .big-number{
+  font-size: 3em;
+  font-weight: 100;
+}
+
+section#event {
+  margin-top: 2em;
+}
