@@ -9,4 +9,5 @@ return array(
     'Database' => $baseDir . '/db/Database.php',
     'DatabaseAccessObject' => $baseDir . '/db/DatabaseAccessObject.php',
     'MySQL' => $baseDir . '/config/MySQL.php',
+    'Server' => $baseDir . '/config/Server.php',
 );
