@@ -24,7 +24,7 @@
 
   //判斷是否填寫
   if($name == "" || $password == "") {
-    echo "<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."請填寫完成！"."\"".")".";"."</script>";
+    echo"<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."請填寫完資料!"."\"".")".";"."</script>";
     echo "<script type="."\""."text/javascript"."\"".">"."window.location="."\""."http://localhost/eric12345566/src/user/register.php"."\""."</script>";
     exit;
   }
@@ -41,11 +41,11 @@
                 if($db->getRowCount() == 0) {
                     $hash_password = password_hash($password, PASSWORD_BCRYPT);
                     $result = $db->execute("INSERT INTO generaluser (username, email, password, name, phonenumber, gender, bdate, university, major, stdId ,stdId_img) VALUES ( ?,?,?,?,?,?,?,?,?,?,?)",array($username,$email,$hash_password,$name,$phonenumber,$gender,$bdate,$university,$major,$stdId,$stdId_img));
-                    echo $db->getErrorMessage();
                     if($db->getRowCount()) {
                       echo "註冊成功";
                    } else {
                       echo "註冊失敗";
+                      echo $db->getErrorMessage();
                    }
               } else {
                 echo "<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."該信箱已被註冊過!"."\"".")".";"."</script>";
