@@ -12,15 +12,20 @@
       if ($db->getRowCount()) { //如果
           $result = $db->execute("UPDATE UserEP SET used = ? WHERE link_no = ?;", array(1, $_SESSION["token"]));   //使token 失效
           if ($db->getRowCount()) {
-              echo "更新成功"; //TODO 回到首頁
-            // header("Location:")
+              echo '<script type="text/javascript">alert("更新成功！請至首頁登入");</script>'; ?>
+              <script type="text/javascript">window.location.href="login.php"</script>; //重新導向至首頁
+              <?php
           } else {
-              echo "失敗";
+              echo "請聯絡我們的助教"; //
           }
       } else {
           echo $db->getErrorMessage();   //修改失敗，要求重試或是聯絡客服、技術人員
           echo "請聯絡我們的助教";
           header("Refresh:2 ; url=login.php");
       }
+  } else {
+      echo '<script type="text/javascript">alert("還敢偷偷關Javascript？？？");</script>'; ?>
+    <script type="text/javascript">window.location.href="login.php"</script>; //重新導向至首頁
+    <?php
   }
-      // TODO 返回到輸入修改頁面
+  ?>

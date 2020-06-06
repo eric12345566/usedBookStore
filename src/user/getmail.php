@@ -36,7 +36,6 @@
    }
    $num = new randomtoken;
   $usermail = stripslashes(trim($_POST['email']));
-  echo "User's email is ".$usermail;
 
   $result = $db->execute("SELECT * FROM USERNAME WHERE email = ?", array($usermail));
   if ($db->getRowCount()) {
@@ -54,11 +53,16 @@
       $headers.="From:".mb_encode_mimeheader("PJCHENder", "utf-8")."<email@anywhere.com>\r\n";
 
       if (mail($to, $subject, $message, $headers)) {
-          echo "信件已傳送到信箱";
+          echo '<script type="text/javascript">alert("驗證連結已寄送到Email!");</script>'; ?>
+      <script type="text/javascript">window.location.href="login.php"</script>; //重新導向
+      <?php
       //echo "<br />hekko" . $db->getRowCount();
       } else {
           echo "失敗";
       }
   } else {
-      echo "使用者信箱不存在";
+      echo '<script type="text/javascript">alert("查無此使用者Email!請重新嘗試");</script>'; ?>
+      <script type="text/javascript">window.location.href="forget.php"</script>; //重新導向
+      <?php
   }
+?>
