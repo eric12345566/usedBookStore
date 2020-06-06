@@ -1,3 +1,9 @@
+<?php
+  require __DIR__ . '/../src/vendor/autoload.php';
+  $db = Database::get();
+  $result = $db->execute("SELECT * FROM book_product;", array());
+  echo $result[0]["book_name"];
+ ?>
 <!DOCTYPE html>
 <html>
 
@@ -52,7 +58,7 @@
           <div class="card">
             <img class="card-img-top" src="./image/card.jpg" alt="Card image cap">
             <div class="card-body">
-              <div class="card-book">系統程式- System Software</div>
+              <div class="card-book"><?php echo $result[0]["book_name"] ; ?></div>
               <p class="card-writer">作者 ：Leland L. Beck</p>
               <p class="card-pay">價格: 200元</p>
             </div>
