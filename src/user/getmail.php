@@ -40,7 +40,7 @@
 
   $result = $db->execute("SELECT * FROM USERNAME WHERE email = ?", array($usermail));
   if ($db->getRowCount()) {
-      $token = $num->getnum();
+      $token = $num->getrand_id();
       $token = sha1($token);
       $db->execute("INSERT INTO UserEP(usermail, link_no, used) VALUE(?, ?, ?);", array($usermail, $token,0));
       echo $token;
