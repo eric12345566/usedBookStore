@@ -1,0 +1,136 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab480
+\pard\pardeftab480\ri720\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\
+create table book_product (\
+	product_no varchar(20) primary key,\
+	book_name varchar(50) not null,\
+	ISBN varchar(20) not null,\
+	publisher varchar (20) not null,\
+	avialiable boolean not null,\
+	price int not null,\
+	b_language varchar(20),\
+	publish_date date not null,\
+	exterior varchar (256) ,\
+	author varchar(20) not null,\
+	be_sold varchar(20) not null,\
+	set_time timestamp\
+);\
+create table photo(\
+	product_no varchar(20) ,\
+	photo varchar(100) ,\
+	primary key(product_no,photo)\
+);\
+create table evaluate(\
+	order_no varchar(20) primary key,\
+	stars int not null,\
+	e_comment varchar(256)\
+) ;\
+\
+create table p_order(\
+	p_username varchar(128) not null,\
+	s_username varchar(128) not null,\
+	order_no varchar(20) primary key,\
+	order_status varchar(20) not null,\
+	build_date date not null,\
+	complete_date date ,\
+	cancel_reason varchar(256) \
+);\
+\
+create table items (\
+	product_no varchar(20) ,\
+	order_no varchar(20) ,\
+	price int not null,\
+	amount int not null,\
+	primary key(product_no,order_no)\
+);\
+\
+\
+CREATE TABLE Classify_tag (\
+  class_name    varchar(25) not null,\
+  PRIMARY KEY (class_name)\
+);\
+\
+CREATE TABLE tag (\
+  Class_name  varchar(25) primary key\
+);\
+\
+CREATE TABLE Admin (\
+  Admin_name    varchar(128) not null,\
+  password      varchar(128),\
+  Email         varchar(128) ,  \
+  PRIMARY KEY (Admin_name)\
+);   \
+CREATE TABLE GeneralUser (\
+  username       varchar(128) not null,\
+  password       varchar(128),\
+  bdate          timestamp,\
+  name           varchar(4),\
+  phonenumber    int(10),\
+  gender         char(1),\
+  stdId          char(8),\
+  uuiversity     varchar(128),\
+  major          varchar(128),\
+  std_authen     boolean,\
+  prefer_loc     varchar(128),\
+  s_flag         boolean,\
+  address        varchar(128),\
+  uni_code       varchar(128),\
+  register_name  varchar(128),\
+  man_in_charge  varchar(4),\
+  Admin_name     varchar(4),\
+  certi_state    boolean,\
+  PRIMARY KEY (username)\
+);\
+CREATE TABLE Prefer_loc (\
+  prefer_loc     varchar(128), \
+  s_username     varchar(128),\
+  PRIMARY KEY (prefer_loc)\
+);\
+\
+CREATE TABLE Report (\
+  s_username     varchar(128),\
+  p_username     varchar(128),\
+  report_no      varchar(128),\
+  certi_state    boolean,\
+  reason         text,\
+  Admin_name     varchar(4),\
+  PRIMARY KEY (report_no)\
+);\
+\
+CREATE TABLE UserEP (\
+    useremail varchar(128),\
+    set_time timestamp,\
+    link_no  varchar(128),\
+	used Boolean not null,\
+    PRIMARY KEY(link_no)\
+);\
+\
+ALTER TABLE photo\
+ADD FOREIGN KEY (product_no) REFERENCES book_product(product_no);\
+\
+ALTER TABLE evaluate\
+ADD FOREIGN KEY (order_no) REFERENCES  p_order (order_no);\
+\
+ALTER TABLE Classify_tag\
+ADD FOREIGN KEY (class_name) REFERENCES  tag (Class_name);\
+\
+ALTER TABLE p_order\
+ADD FOREIGN KEY (p_username) REFERENCES  GeneralUser (username),\
+ADD FOREIGN KEY (s_username) REFERENCES  GeneralUser (username);\
+\
+ALTER TABLE items\
+ADD FOREIGN KEY (order_no) REFERENCES  p_order (order_no),\
+ADD FOREIGN KEY (product_no) REFERENCES  book_product (product_no);\
+\
+\pard\pardeftab480\ri720\partightenfactor0
+
+\f1 \cf0 \kerning1\expnd0\expndtw0 \
+\
+}

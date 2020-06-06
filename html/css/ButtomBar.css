@@ -40,3 +40,6 @@ section#header {
 .bottomtext {
   font-weight: bolder;
 }
+.bottomText {
+  color: #ffffff;
+}
