@@ -30,59 +30,59 @@
   }
 
   //驗證資料格式
-  if(preg_match('/^[A-Za-z0-9]*[A-Z]+[A-Za-z0-9]*[0-9]+[A-Za-z0-9]*$/', $password)) {
+ //TODO username只能英文、數字、底線 
+  if(preg_match('/^(?!.*[^\x21-\x7e])(?=.{4,10})(?=.*[\W])(?=.*[a-zA-Z])(?=.*\d).*$/', $password)) {
      if(preg_match('/^09[0-9]{8}$/' , $phonenumber)) {
         if(preg_match('/^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{2,5}$/',$email)) {
-          if(preg_match('/^[A-Za-z0-9]*[A-Z]+[A-Za-z0-9]*[0-9]+[A-Za-z0-9]*$/',$stdId)) {
+          if(preg_match('/^D{1}[0-9]{7}/',$stdId)) {
             if($gender == '男' || $gender == '女' ) {
               if(preg_match("/^[\x{4e00}-\x{9fa5}]+$/u",$name)) {
                 if($filename != ".jpg") {
                 $repeat_email = $db->execute("SELECT * FROM generaluser WHERE email = ? ;", array($email));
                 if($db->getRowCount() == 0) {
-                    $hash_password = password_hash($password, PASSWORD_BCRYPT);
+                  $repeat_name = $db->execute("SELECT * FROM generaluser WHERE username = ? ;", array($username));
+                  if($db->getRowCount() == 0) {
+                    $hash_password = password_hash($password, PASSWORD_DEFAULT,['cost' => 11]);
                     $result = $db->execute("INSERT INTO generaluser (username, email, password, name, phonenumber, gender, bdate, university, major, stdId ,stdId_img) VALUES ( ?,?,?,?,?,?,?,?,?,?,?)",array($username,$email,$hash_password,$name,$phonenumber,$gender,$bdate,$university,$major,$stdId,$stdId_img));
                     if($db->getRowCount()) {
-                      echo "註冊成功";
+                      echo "<script>alert('註冊成功'); location.href = 'http://localhost/eric12345566/src/user/login.php';</script>";
                    } else {
                       echo "註冊失敗";
                       echo $db->getErrorMessage();
                    }
-              } else {
-                echo "<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."該信箱已被註冊過!"."\"".")".";"."</script>";
-                echo "<script type="."\""."text/javascript"."\"".">"."window.location="."\""."http://localhost/eric12345566/src/user/register.php"."\""."</script>";
+                  } else {
+                    echo "<script>alert('警告: 該使用者名稱已被註冊!'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
+                    exit;
+                  }
+                } else {
+                echo "<script>alert('警告: 該信箱已被註冊!'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
                 exit;
               }
               } else {
-                echo '不允許該檔案格式';
+                echo "<script>alert('警告: 不允許該檔案格式'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
               }
              } else {
-               echo "<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."姓名不可有特殊字元或英文"."\"".")".";"."</script>";
-               echo "<script type="."\""."text/javascript"."\"".">"."window.location="."\""."http://localhost/eric12345566/src/user/register.php"."\""."</script>";
+               echo "<script>alert('警告: 姓名不可有特殊字元或符號'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
                exit;
             }
           } else {
-            echo "<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."請填寫正確性別"."\"".")".";"."</script>";
-            echo "<script type="."\""."text/javascript"."\"".">"."window.location="."\""."http://localhost/eric12345566/src/user/register.php"."\""."</script>";
+            echo "<script>alert('警告: 請填寫正確性別'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
             exit;
            }
           } else {
-            echo "<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."學號錯誤"."\"".")".";"."</script>";
-            echo "<script type="."\""."text/javascript"."\"".">"."window.location="."\""."http://localhost/eric12345566/src/user/register.php"."\""."</script>";
+            echo "<script>alert('警告: 學號格式錯誤'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
             exit;
           }
         } else {
-          echo "<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."信箱格式錯誤"."\"".")".";"."</script>";
-          echo "<script type="."\""."text/javascript"."\"".">"."window.location="."\""."http://localhost/eric12345566/src/user/register.php"."\""."</script>";
+          echo "<script>alert('警告: 信箱格式錯誤'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
           exit;
         }
      } else {
-         echo "<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."手機格式錯誤"."\"".")".";"."</script>";
-         echo "<script type="."\""."text/javascript"."\"".">"."window.location="."\""."http://localhost/eric12345566/src/user/register.php"."\""."</script>";
-         exit;
-       }
-  } else {
-     echo "<script type="."\""."text/javascript"."\"".">"."window.alert"."("."\""."密碼格式錯誤"."\"".")".";"."</script>";
-     echo "<script type="."\""."text/javascript"."\"".">"."window.location="."\""."http://localhost/eric12345566/src/user/register.php"."\""."</script>";
+       echo "<script>alert('警告: 手機格式錯誤'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
+       exit;    
+    }
+   } else {
+     echo "<script>alert('警告: 密碼格式錯誤'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
      exit;
   }
 

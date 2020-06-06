@@ -13,4 +13,4 @@
   // $result =  $db->execute("INSERT INTO user (name, sex) VALUES (?,?)", array("hello", "W"));
   $result =  $db->execute("SELECT * FROM user");
   echo $db->getLastId() . "<br />" . $db->getRowCount() . "<br />";
-  echo Server::serverUrl;
+  echo $Server::serverUrl;
