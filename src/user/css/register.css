@@ -1,0 +1,54 @@
+body{
+    margin:0px;
+    padding:0px;
+    background:#fff url(../image/card7.jpg) center center fixed no-repeat;
+    background-size: cover;
+}
+.register_card {
+    background-color: #fff;
+    margin-top: 8em;
+    font-family: "SF Pro TC", "SF Pro Text", "SF Pro Icons", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", "Microsoft JhengHei", wf_SegoeUI, "Segoe UI", Segoe, "Segoe WP", Tahoma, Verdana, Ubuntu, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, 微軟正黑體, "LiHei Pro",
+    "WenQuanYi Micro Hei", "Droid Sans Fallback", "AR PL UMing TW", Roboto, "Helvetica Neue", "Hiragino Maru Gothic ProN", メイリオ, "ヒラギノ丸ゴ ProN W4", Meiryo, "Droid Sans", sans-serif;
+}
+#space {
+    margin-top: 12em;
+}
+#logo {
+    font-size: 2.5em;
+    font-weight: 4  00 !important;
+    text-align: center;
+    padding-top: 1em;
+}
+.input {
+    margin-top: 2em;
+}
+.input_text {
+    font-size: 0.6em;
+}
+.text {
+    border:1px;
+    border-bottom-style: solid;
+    border-top-style: none;
+    border-left-style:none;
+    border-right-style:none;
+}
+::placeholder {
+    font-size: 0.7em;
+    color: rgb(177, 170, 170);
+}
+.buttom_location{
+    text-align: center;
+    margin-top: 5em;
+    padding-bottom: 5em;
+}
+.button {
+    font-size: 1em !important;
+    background-color: rgb(39, 88, 92);
+    border: none;
+    color: white;
+    padding: 0.1em 1.2em;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
