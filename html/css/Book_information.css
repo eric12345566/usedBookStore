@@ -1,0 +1,59 @@
+#demo {
+    width: 100%;
+}
+#images {
+    margin-top: 5em;
+}
+#imagesinformation{
+    margin-top: 5em;
+    margin-left: 7em;
+}
+.booktitle {
+    color: black;
+    font-weight: bolder;
+    font-size: 2em;
+}
+.Lab {
+    color: black;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+.fa {
+    color: gray;
+}
+#price {
+    color: cornflowerblue;
+    font-size: 3em;
+}
+#paybuttom {
+    margin-left: 4em;
+    margin-bottom: 1.8em;
+}
+.seller-title{
+    color: gray;
+}
+.sellername {
+    color: black;
+    font-size: 1.8em;
+}
+.sellerDepartment {
+    color: black;
+    font-weight: bolder;
+}
+.card-body {
+    margin-top: 3.2em;
+    margin-left: 3.3em;
+}
+.card-img {
+    margin-top: 3.2em;
+    margin-left: 3.3em;
+}
+.card {
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+    margin-left: 7em;
+    margin-top: 3em;
+    width: 28em;
+    height: 15em;
+}

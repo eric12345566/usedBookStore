@@ -1,0 +1,231 @@
+<!--body 大小不是左右填滿的-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="./css/register.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $("ul.navigation > li:has(ul > a").append('<div class="arrow-button"></div>');
+        $("ul.navigation > li ul li:has(ul) > a").append('<div class="arrow-right"></div>');
+      });
+    </script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="register_card">
+          <div id="logo">L O G O</div>
+          <div style="font-size: 1em; text-align: center;font-weight: bolder;">
+            註冊帳號
+          </div>
+
+          <div class="input">
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                <p class="input_text">E-mail</p>
+                <input
+                  class="text"
+                  type="text"
+                  name="txt1"
+                  size="25"
+                  placeholder="輸入email.."
+                />
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                <p class="input_text">生日</p>
+                <input
+                  class="text"
+                  type="text"
+                  name="txt1"
+                  size="25"
+                  placeholder="點選進入選擇月曆.."
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="input">
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                <p class="input_text">密碼</p>
+                <input
+                  class="text"
+                  type="text"
+                  name="txt1"
+                  size="25"
+                  placeholder="至少8個字，並且包含一個英文及一個數字.."
+                />
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                <p class="input_text">學校</p>
+                <input
+                  class="text"
+                  type="text"
+                  name="txt1"
+                  size="25"
+                  placeholder="點選進入選單.."
+                  list="school"
+                />
+                
+                <datalist id="school">
+                  <option value="逢甲大學">
+                  <option value="政治大學">
+                  <option value="交通大學">
+                  <option value="台灣大學">
+                  <option value="清華大學">
+                  <option value="成功大學">
+                </datalist>
+              </div>
+            </div>
+          </div>
+
+          <div class="input">
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                <p class="input_text">姓名</p>
+                <input
+                  class="text"
+                  type="text"
+                  name="txt1"
+                  size="25"
+                  placeholder="輸入姓名.."
+                />
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                <p class="input_text">科系</p>
+                <input
+                  class="text"
+                  type="text"
+                  name="txt1"
+                  size="25"
+                  list="department"
+                  placeholder="點選進入選單.."
+                />
+              </div>
+              <datalist id="department">
+                <option value="資工系">
+                <option value="電機系">
+                <option value="通訊系">
+                <option value="光電系">
+                <option value="建築系">
+                <option value="企管系">
+                <option value="行銷系">
+                <option value="財經系">
+                <option value="財稅系">
+                <option value="國貿系">
+                <option value="經濟系">
+                <option value="風保系">  
+              </datalist>
+            </div>
+          </div>
+
+          <div class="input">
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                <p class="input_text">手機號碼</p>
+                <input
+                  class="text"
+                  type="text"
+                  name="txt1"
+                  size="25"
+                  placeholder="輸入手機號碼..."
+                />
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                <p class="input_text">學號</p>
+                <input
+                  class="text"
+                  type="text"
+                  name="txt1"
+                  size="25"
+                  placeholder="輸入學號.."
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="input">
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                <p class="input_text">性別</p>
+                <input
+                  class="text"
+                  type="text"
+                  name="txt1"
+                  size="25"
+                  list="sex"
+                  placeholder="點選進入選單"
+                />
+                <datalist id="sex">
+                  <option value="男">
+                  <option value="女">
+                  <option value="其他">
+                </datalist>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-5">
+                <p class="input_text">
+                  上傳學生證 (認證生份，<a
+                    href="#"
+                    style="color: rgb(53, 165, 159);"
+                    >查看個資隱私政策</a
+                  >)
+                </p>
+                <input
+                  class="text"
+                  type="text"
+                  name="txt1"
+                  size="25"
+                  placeholder="點選上傳檔案(上傳正面)"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-5"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+              <input
+                class="text"
+                type="text"
+                name="txt1"
+                size="25"
+                placeholder="點選上傳檔案(上傳反面)"
+              />
+            </div>
+          </div>
+
+          <div class="buttom_location">
+            <button class="button">立即註冊</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="space"></div>
+  </body>
+</html>
