@@ -1,13 +1,7 @@
 <?php
-  require __DIR__ . '/../src/vendor/autoload.php';
+  require __DIR__ . '/../vendor/autoload.php';
   $db = Database::get();
   $result = $db->execute("SELECT * FROM book_product;", array());
-  if ($db->getRowCount()) {
-      echo "string";
-  } else {
-      echo "haha";
-  }
-  echo $result[0]["book_name"];
  ?>
 <!DOCTYPE html>
 <html>
@@ -64,8 +58,8 @@
             <img class="card-img-top" src="./image/card.jpg" alt="Card image cap">
             <div class="card-body">
               <div class="card-book"><?php echo $result[0]["book_name"] ; ?></div>
-              <p class="card-writer">作者 ：Leland L. Beck</p>
-              <p class="card-pay">價格: 200元</p>
+              <p class="card-writer">作者：<?php echo $result[0]["author"] ; ?></p>
+              <p class="card-pay">價格： <?php echo $result[0]["price"] ; ?>元</p>
             </div>
           </div>
         </div>
@@ -73,9 +67,9 @@
           <div class="card">
             <img class="card-img-top" src="./image/card1.jpg" alt="Card image cap">
             <div class="card-body">
-              <div class="card-book">系統程式- System Software</div>
-              <p class="card-writer">作者：Leland L. Beck</p>
-              <p class="card-pay">價格: 200元</p>
+              <div class="card-book"><?php echo $result[1]["book_name"] ; ?></div>
+              <p class="card-writer">作者：<?php echo $result[1]["author"] ; ?></p>
+              <p class="card-pay">價格：<?php echo $result[1]["price"] ; ?></p>
             </div>
           </div>
         </div>
@@ -83,9 +77,9 @@
           <div class="card">
             <img class="card-img-top" src="./image/card2.jpg" alt="Card image cap">
             <div class="card-body">
-              <div class="card-book">系統程式- System Software</div>
-              <p class="card-writer">作者：Leland L. Beck</p>
-              <p class="card-pay">價格: 200元</p>
+              <div class="card-book"><?php echo $result[2]["book_name"] ; ?></div>
+              <p class="card-writer">作者：<?php echo $result[2]["author"] ; ?></p>
+              <p class="card-pay">價格：<?php echo $result[2]["price"] ; ?></p>
             </div>
           </div>
         </div>
@@ -93,9 +87,9 @@
           <div class="card">
             <img class="card-img-top" src="./image/card3.jpg" alt="Card image cap">
             <div class="card-body">
-              <div class="card-book">系統程式- System Software</div>
-              <p class="card-writer">作者：Leland L. Beck</p>
-              <p class="card-pay">價格: 200元</p>
+              <div class="card-book"><?php echo $result[3]["book_name"] ; ?></div>
+              <p class="card-writer">作者：<?php echo $result[3]["author"] ; ?></p>
+              <p class="card-pay">價格：<?php echo $result[3]["price"] ; ?></p>
             </div>
           </div>
         </div>

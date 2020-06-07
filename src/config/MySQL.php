@@ -7,5 +7,5 @@
         const ADDRESS = '127.0.0.1';
         const USERNAME = "root";
         const PASSWORD = "";
-        const DATABASE = "Practice";
+        const DATABASE = "TE";
     }

@@ -20,9 +20,13 @@
   if ($db->getRowCount()) {
       if (!strcmp(sha1($password), sha1($result[0]['password']))) {
           echo "歡迎登入，". $username;
-          // username 註冊到 session 變數
+          // username 註冊到 session 變數 ?>
+          <script type="text/javascript">window.location.href="homepage.php"</script>; //重新導向
+          <?php
           $_SESSION['username'] = $result[0]['username'];
       }
   } else {
-      echo "登入失敗";
+      echo '<script type="text/javascript">alert("登入失敗!請確認帳號或密碼");</script>'; ?>
+<script type="text/javascript">window.location.href="login.php"</script>; //重新導向
+<?php
   }
