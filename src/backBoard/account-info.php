@@ -1,10 +1,3 @@
-<?php
-  session_start();
-  require __DIR__ . '/../vendor/autoload.php';
-  if (!isset($_SESSION['adminName'])) {
-      header("Location: http://" . Server::serverUrl . Server::prefixUrl . "/backboard/login.php");
-  }
- ?>
 <!doctype html>
 <html lang="zh-tw">
 
@@ -15,9 +8,11 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
   <link rel="stylesheet" href="./style/base.css">
-  <link rel="stylesheet" href="./style/index.css">
-  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="./style/accounts.css">
+  <title>用戶管理 - Admin Dashboard</title>
 </head>
 
 <body>
@@ -51,11 +46,11 @@
       <div class="row">
         <div class="col-2">
           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" href="./index.php" role="tab"><svg class="bi bi-house" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <a class="nav-link" href="./index.php" role="tab"><svg class="bi bi-house" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
                 <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
               </svg> 儀表板</a>
-            <a class="nav-link" href="./accounts.php" role="tab">
+            <a class="nav-link active" href="./accounts.php" role="tab">
               <svg class="bi bi-people" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.995-.944v-.002.002zM7.022 13h7.956a.274.274 0 0 0 .014-.002l.008-.002c-.002-.264-.167-1.03-.76-1.72C13.688 10.629 12.718 10 11 10c-1.717 0-2.687.63-3.24 1.276-.593.69-.759 1.457-.76 1.72a1.05 1.05 0 0 0 .022.004zm7.973.056v-.002.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10c-1.668.02-2.615.64-3.16 1.276C1.163 11.97 1 12.739 1 13h3c0-1.045.323-2.086.92-3zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
@@ -97,87 +92,82 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12">
-                  <h2>儀表板</h2>
+                  <h2>用戶詳細頁面</h2>
                 </div>
               </div>
             </div>
           </section>
-
-          <section id="number">
+          <section id="info">
             <div class="container-fluid">
-              <div class="row">
-                <div class="col-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">用戶人數</h5>
-                      <p class="card-text big-number">123</p>
-                      <a href="#" class="btn btn-primary">查看用戶</a>
+              <form>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="exampleInputUsername">username</label>
+                      <input type="text" class="form-control" id="exampleInputUsername">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername">姓名</label>
+                      <input type="text" class="form-control" id="exampleInputUsername">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername">Email</label>
+                      <input type="email" class="form-control" id="exampleInputUsername">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">密碼更新</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername">學號</label>
+                      <input type="text" class="form-control" id="exampleInputUsername">
+                    </div>
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleFormControlFile1">Example file input</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="exampleInputUsername">手機</label>
+                      <input type="text" class="form-control" id="exampleInputUsername">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">性別</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>男</option>
+                        <option>女</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">生日</label>
+                      <input type="date" name="bdate" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">學校</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>逢甲大學</option>
+                        <option>國立台灣大學</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">科系</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>資工系</option>
+                        <option>電機系</option>
+                      </select>
                     </div>
                   </div>
                 </div>
-                <div class="col-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">尚未身份驗證</h5>
-                      <p class="card-text big-number">20</p>
-                      <a href="#" class="btn btn-primary">立刻審核</a>
-                    </div>
+                <div class="row">
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
                 </div>
-                <div class="col-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">訂單總數</h5>
-                      <p class="card-text big-number">2050</p>
-                      <a href="#" class="btn btn-primary">查看訂單</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section id="event">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <table class="table">
-                    <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">Time</th>
-                        <th scope="col">Event</th>
-                        <th scope="col">User</th>
-                        <th scope="col">IP</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">2020/06/01 13:00</th>
-                        <td>登入管理系統</td>
-                        <td>Eric</td>
-                        <td>140.128.136.24</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2020/06/01 13:00</th>
-                        <td>登入管理系統</td>
-                        <td>Eric</td>
-                        <td>140.128.136.24</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2020/06/01 13:00</th>
-                        <td>登入管理系統</td>
-                        <td>Eric</td>
-                        <td>140.128.136.24</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2020/06/01 13:00</th>
-                        <td>登入管理系統</td>
-                        <td>Eric</td>
-                        <td>140.128.136.24</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+              </form>
             </div>
           </section>
         </div>
@@ -187,9 +177,11 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 </body>
 
 </html>

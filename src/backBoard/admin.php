@@ -15,9 +15,11 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
   <link rel="stylesheet" href="./style/base.css">
-  <link rel="stylesheet" href="./style/index.css">
-  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="./style/admin.css">
+  <title>管理者帳號 - Admin Dashboard</title>
 </head>
 
 <body>
@@ -51,7 +53,7 @@
       <div class="row">
         <div class="col-2">
           <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" href="./index.php" role="tab"><svg class="bi bi-house" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <a class="nav-link" href="./index.php" role="tab"><svg class="bi bi-house" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
                 <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
               </svg> 儀表板</a>
@@ -85,7 +87,7 @@
                 <circle cx="3.5" cy="8" r=".5" />
                 <circle cx="3.5" cy="10.5" r=".5" />
               </svg> 學校列表管理</a>
-            <a class="nav-link" href="./admin.php" role="tab"> <svg class="bi bi-gear" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <a class="nav-link active" href="./admin.php" role="tab"> <svg class="bi bi-gear" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
                 <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z" />
@@ -97,82 +99,78 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12">
-                  <h2>儀表板</h2>
+                  <h2>管理者帳號</h2>
                 </div>
               </div>
             </div>
           </section>
-
-          <section id="number">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">用戶人數</h5>
-                      <p class="card-text big-number">123</p>
-                      <a href="#" class="btn btn-primary">查看用戶</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">尚未身份驗證</h5>
-                      <p class="card-text big-number">20</p>
-                      <a href="#" class="btn btn-primary">立刻審核</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">訂單總數</h5>
-                      <p class="card-text big-number">2050</p>
-                      <a href="#" class="btn btn-primary">查看訂單</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section id="event">
+          <section id="admin-op">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12">
-                  <table class="table">
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#register">
+                    <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
+                      <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
+                    </svg> 新增管理者帳號
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="register" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <form action="./API/admin-register.php" method="post">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="form-group">
+                              <label for="exampleInputadmin">管理者帳號</label>
+                              <input type="text" name="adminName" class="form-control" id="exampleInputadmin" required>
+                              <div class="invalid-feedback">帳號格式錯誤</div>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Email address</label>
+                              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                              <div class="invalid-feedback">電子郵件格式錯誤</div>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">密碼</label>
+                              <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+                              <div class="invalid-feedback">密碼格式錯誤 - 4~50字元，至少一個特殊符號，至少一個大小寫、0~9數字</div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">送出</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="admin-list">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12">
+                  <table class="table" id="myTable">
                     <thead class="thead-dark">
                       <tr>
-                        <th scope="col">Time</th>
-                        <th scope="col">Event</th>
-                        <th scope="col">User</th>
-                        <th scope="col">IP</th>
+                        <th>Admin Name</th>
+                        <th>Email</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">2020/06/01 13:00</th>
-                        <td>登入管理系統</td>
-                        <td>Eric</td>
-                        <td>140.128.136.24</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2020/06/01 13:00</th>
-                        <td>登入管理系統</td>
-                        <td>Eric</td>
-                        <td>140.128.136.24</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2020/06/01 13:00</th>
-                        <td>登入管理系統</td>
-                        <td>Eric</td>
-                        <td>140.128.136.24</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2020/06/01 13:00</th>
-                        <td>登入管理系統</td>
-                        <td>Eric</td>
-                        <td>140.128.136.24</td>
+                        <th>eric</th>
+                        <td>eric12345566@gmail.com</td>
                       </tr>
                     </tbody>
                   </table>
@@ -187,9 +185,53 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var table = $('#myTable').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "./API/admin-table.php"
+      });
+
+      $('#myTable tbody').on('click', 'tr', function() {
+        var data = table.row(this).data();
+        alert('You clicked on ' + data[0] + '\'s row');
+        // document.location.href="http://" + location.hostname + "/ub/src" + "/backboard/index.php";
+      });
+
+      let url = new URL(location.href);
+      let params = url.searchParams;
+      let errorMsg = "";
+
+      for (let pair of params.entries()) {
+        console.log(`key: ${pair[0]}, value: ${pair[1]}`);
+        if(pair[0] === "errormsg"){
+          errorMsg = pair[1];
+        }
+      }
+
+      if(errorMsg){
+        $('#register').modal('show');
+
+        if(errorMsg[0] === '1'){
+          $('#exampleInputadmin').addClass("is-invalid");
+        }
+
+        if(errorMsg[1] === '1'){
+          $('#exampleInputEmail1').addClass("is-invalid");
+        }
+
+        if(errorMsg[2] === '1'){
+          $('#exampleInputPassword1').addClass("is-invalid");
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>

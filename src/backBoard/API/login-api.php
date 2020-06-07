@@ -4,14 +4,12 @@
 
   $username = $_POST['username'];
   $password = $_POST['password'];
-  $password = $_POST["hello"];
 
   $db = Database::get();
-  $result = $db->execute("SELECT * from Admin Where Admin_name = ? AND password = ?", array($username, $password));
-
-  if ($db->getRowCount()) {
-      // header("Location: http://" . Server::serverUrl . "/backboard/index.php");
-      echo "登入成功";
+  $result = $db->execute("SELECT * from Admin Where Admin_name = ?", array($username));
+  if ($db->getRowCount() && password_verify($password, $result[0]['password'])) {
+      $_SESSION['adminName'] = $username;
+      header("Location: http://" . Server::serverUrl . Server::prefixUrl . "/backboard/index.php");
   } else {
-      echo "登入失敗";
+      header("Location: http://" . Server::serverUrl . Server::prefixUrl . "/backboard/error/login-error.php");
   }
