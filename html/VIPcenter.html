@@ -1,11 +1,89 @@
 <!DOCTYPE html>
+
 <head>
-    <title>搜尋</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="./css/VIPcenter.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <title>搜尋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="./css/VIPcenter.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
 <body>
-    
+
+  <!--This is navbar-->
+  <nav id="main-nav" class="navbar navbar-expand-sm navbar-dark fixed-top">
+    <div id="myBar" class="container">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <h2 style="position: fixed; left: 3em; color: darkcyan; font-family: Microsoft JhengHei;">二手書網</h2>
+        </li>
+        <col class="nav-item">
+        <a href="#home-section" class="nav-link topNavbar active">首頁</a>
+        <col class="nav-item">
+        <a href="#explore-head-section" class="nav-link topNavbar">搜尋</a>
+        <col class="nav-item">
+        <a href="#author-head-section" class="nav-link topNavbar">分類</a>
+        <col class="nav-item">
+        <a href="#mission-head-section" class="nav-link topNavbar">賣書</a>
+        <col class="nav-item">
+        <a href="#mission-head-section" class="nav-link topNavbar">會員中心</a>
+        <col class="nav-item">
+        <img src="image/account.png" alt="Avatar" id="account">
+      </ul>
+    </div>
+  </nav>
+
+  <h3 id="Title">會員中心</h3>
+
+  <div class="row">
+    <div class="card" id="card1">
+      <div class="index">
+        <div class="row">
+          <a href="#" id="profile">
+            <img src="image/profile.png" style="width: 25px;">
+            個人基本資料
+          </a>
+        </div>
+        <div class="row">
+          <a href="#" id="change">
+            <img src="image/security.png" style="width: 25px;">
+            帳號密碼修改
+          </a>
+        </div>
+        <div class="row">
+          <a href="#" id="order">
+            <img src="image/list.png" style="width: 25px;">
+            訂單查詢
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="card" id="card2">
+      <div class="row">
+        <div class="col">
+          <img src="image/account.png" alt="Avatar" style="width: 10em;">
+        </div>
+        <div class="col group">
+          <div class="row">
+            <span>姓名:_________</span>
+          </div>
+          <div class="row">
+            <span>生日:_________</span>
+          </div>
+        </div>
+        <div class="col group">
+          <div class="row">
+            <span>手機號碼:_________</span>
+          </div>
+          <div class="row">
+            <span>E-mail:____________</span>
+          </div>
+        </div>
+        <div class="col group">
+          <div class="row">
+            <span>性別:_________</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
