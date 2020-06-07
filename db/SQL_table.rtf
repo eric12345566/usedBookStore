@@ -3,7 +3,7 @@
 }
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh16580\viewkind0
 \deftab480
 \pard\pardeftab480\ri720\partightenfactor0
 
@@ -28,19 +28,14 @@ create table photo(\
 	photo varchar(100) ,\
 	primary key(product_no,photo)\
 );\
-create table evaluate(\
-	order_no varchar(20) primary key,\
-	stars int not null,\
-	e_comment varchar(256)\
-) ;\
 \
 create table p_order(\
 	p_username varchar(128) not null,\
 	s_username varchar(128) not null,\
 	order_no varchar(20) primary key,\
 	order_status varchar(20) not null,\
-	build_date date not null,\
-	complete_date date ,\
+	build_date date timestamp,\
+	complete_date timestamp ,\
 	cancel_reason varchar(256) \
 );\
 \
@@ -53,6 +48,10 @@ create table items (\
 );\
 \
 \
+CREATE TABLE tag (\
+  Class_name  varchar(25) primary key\
+);\
+\
 CREATE TABLE Classify_tag (\
   class_name    varchar(25) not null,\
   product_no int,\
@@ -62,10 +61,6 @@ CREATE TABLE Classify_tag (\
 ALTER TABLE Classify_tag \
 ADD foreign key (product_no) references book_product(product_no),\
 ADD foreign key (class_name) references tag (Class_name)\
-\
-CREATE TABLE tag (\
-  Class_name  varchar(25) primary key\
-);\
 \
 CREATE TABLE Admin (\
   Admin_name    varchar(128) not null,\
@@ -102,21 +97,11 @@ CREATE TABLE Prefer_loc (\
   PRIMARY KEY (prefer_loc)\
 );\
 \
-CREATE TABLE Report (\
-  s_username     varchar(128),\
-  p_username     varchar(128),\
-  report_no      varchar(128),\
-  certi_state    boolean,\
-  reason         text,\
-  Admin_name     varchar(4),\
-  PRIMARY KEY (report_no)\
-);\
-\
 CREATE TABLE UserEP (\
     useremail varchar(128),\
     set_time timestamp,\
     link_no  varchar(128),\
-	used Boolean not null,\
+    used Boolean not null,\
     PRIMARY KEY(link_no)\
 );\
 \
