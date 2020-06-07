@@ -8,7 +8,7 @@
   <body>
   <div>
         <p >會員註冊</p>
-        <form method="post" action="register-api.php">
+        <form method="post" action="register-api.php" enctype = "multipart/form-data">
             <p><label>username</label><input type="text" name="username"  required></p>
             <p><label>Email</label><input type="email" name="email"  required></p>
             <p><label>姓名</label><input type="text" name="name" required></p>
@@ -29,16 +29,11 @@
 　          <option value="電機系">電機系</option>
             </select>  
             <p><label>學號</label><input type="text" name="stdId" required></p>
-            <form action = "register-api.php" method = "post" enctype = "multipart/form-data">
-            學生證上傳<br><input type="file" name="stdId_img" accept=".jpg , .gif" > <br>
+            學生證上傳<br><input type="file" name="stdId_img" accept=".jpg , .jpeg" > <br>
             <input type="submit"  value="確認" onclick="login();"/>
-            </form>
                 <div>
                 </div>
         </form>
     </div>
   </body>
 </html>
-
-
-
