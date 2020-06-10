@@ -1,0 +1,32 @@
+.button {
+    margin-top: 2em;
+    margin-left: 1.5em;
+    font-size: 1em !important;
+    background-color: #ffffff;
+    border: none;
+    color: black;
+    font-weight: bolder;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+    padding: 0.5em 2.3em;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+#btnGroupDrop1{
+    margin-left: 1.5em;
+    font-size: 1em;
+    background-color: #ffffff;
+    border: none;
+    color: black;
+    font-weight: bolder;
+    border-radius: 0%;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+    padding: 0.5em 2.3em;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
