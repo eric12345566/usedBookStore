@@ -25,7 +25,7 @@
     exit;
   }
 
-  if ( $_FILES["stdId_img"]["size"] > 0 &&  $_FILES["stdId_img"]["size"] < 20000){
+  if ( $_FILES["stdId_img"]["size"] > 0 &&  $_FILES["stdId_img"]["size"] < 6000000){
   //開啟圖片檔
   $file = fopen($_FILES["stdId_img"]["tmp_name"], "rb");
   // 讀入圖片檔資料
