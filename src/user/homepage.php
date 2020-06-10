@@ -45,7 +45,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
-          <div class="label">熱門推薦</div>
+          <div class="label">隨機推薦</div>
         </div>
         <div class="lookmore col-md-6">
           <button type="button" class="btn btn-light">看更多</button>
