@@ -3,7 +3,9 @@ section#cardsection {
     padding-left: 3em;
 }
 .card {
-    box-shadow: 0px 3px 5px;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
 }
 .card-book {
     font-size: 1.2em;
@@ -24,4 +26,8 @@ section#cardsection {
 }
 .lookmore {
     margin-left: 38.1em;
+}
+.button {
+    border: none;
+    background-color: #ffffff;
 }

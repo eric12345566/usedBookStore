@@ -1,70 +1,100 @@
+<!--body 大小不是左右填滿的-->
+
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>二手書網</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="./css/card.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-</head>
-
-<body>
-  <section id="cardsection">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="label">熱門推薦</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="./css/card.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <section id="cardsection">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="label">熱門推薦</div>
+          </div>
+          <div class="lookmore" class="col-md-6">
+            <button type="button" class="btn btn-light">Light</button
+            ><!--buttom-->
+          </div>
         </div>
-        <div class="lookmore col-md-6">
-          <button type="button" class="btn btn-light">看更多</button>
-          <!--buttom-->
+        <div class="row">
+          <div class="col-md-3">
+            <button onclick="location.href='#'" class="button" type="button">
+              <div class="card" style="width: 18em; height: 25.6em;">
+                <img
+                  class="card-img-top"
+                  src="./image/card.jpg"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <div class="card-book">系統程式- System Software</div>
+                  <p class="card-writer">作者 ：Leland L. Beck</p>
+                  <p class="card-pay">價格: 200元</p>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button onclick="location.href='#'" class="button" type="button">
+              <div class="card" style="width: 18em;height: 25.6em;">
+                <img
+                  class="card-img-top"
+                  src="./image/card1.jpg"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <div class="card-book">系統程式- System Software</div>
+                  <p class="card-writer">作者：Leland L. Beck</p>
+                  <p class="card-pay">價格: 200元</p>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button onclick="location.href='#'" class="button" type="button">
+              <div class="card" style="width: 18em;height: 25.6em;">
+                <img
+                  class="card-img-top"
+                  src="./image/card2.jpg"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <div class="card-book">系統程式- System Software</div>
+                  <p class="card-writer">作者：Leland L. Beck</p>
+                  <p class="card-pay">價格: 200元</p>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div class="col-md-3">
+            <button onclick="location.href='#'" class="button" type="button">
+              <div class="card" style="width: 18em;height: 25.6em;">
+                <img
+                  class="card-img-top"
+                  src="./image/card3.jpg"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <div class="card-book">系統程式- System Software</div>
+                  <p class="card-writer">作者：Leland L. Beck</p>
+                  <p class="card-pay">價格: 200元</p>
+                </div>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
-      <div class="row" style="padding: 5em;">
-        <div class="col-md-3">
-          <div class="card">
-            <img class="card-img-top" src="./image/card.jpg" alt="Card image cap" />
-            <div class="card-body">
-              <div class="card-book">系統程式- System Software</div>
-              <p class="card-writer">作者 ：Leland L. Beck</p>
-              <p class="card-pay">價格: 200元</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img class="card-img-top" src="./image/card1.jpg" alt="Card image cap" />
-            <div class="card-body">
-              <div class="card-book">系統程式- System Software</div>
-              <p class="card-writer">作者：Leland L. Beck</p>
-              <p class="card-pay">價格: 200元</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img class="card-img-top" src="./image/card2.jpg" alt="Card image cap" />
-            <div class="card-body">
-              <div class="card-book">系統程式- System Software</div>
-              <p class="card-writer">作者：Leland L. Beck</p>
-              <p class="card-pay">價格: 200元</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img class="card-img-top" src="./image/card3.jpg" alt="Card image cap" />
-            <div class="card-body">
-              <div class="card-book">系統程式- System Software</div>
-              <p class="card-writer">作者：Leland L. Beck</p>
-              <p class="card-pay">價格: 200元</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
-
+    </section>
+  </body>
 </html>
