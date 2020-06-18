@@ -16,6 +16,7 @@
   // TODO: 針對使用者POST的資料做安全性過濾，再傳入 SQL 裡 query
 
   //有安全疑慮的寫法 $result = $db->execute("SELECT * FROM user WHERE username = " . "'" . $username. "'" . " AND password = " . "'" . $password . "';");
+<<<<<<< HEAD
   $hash_password = password_hash($password, PASSWORD_DEFAULT,['cost' => 11]);
   $result = $db->execute("SELECT * FROM generaluser WHERE username = ? AND password = ?;", array($username, $hash_password));
   if ($db->getRowCount()) {
@@ -27,4 +28,20 @@
   } else {
       echo "登入失敗";
       echo $db->getErrorMessage();
+=======
+  $result = $db->execute("SELECT * FROM USERNAME WHERE username = ? AND password = ?;", array($username, $password));
+  if ($db->getRowCount()) {
+      if (!strcmp(sha1($password), sha1($result[0]['password']))) {
+          echo "歡迎登入，". $username;
+          // username 註冊到 session 變數 ?>
+          <script type="text/javascript">window.location.href="homepage.php"</script>; //重新導向
+          <?php
+          $_SESSION['username'] = $result[0]['username'];
+          $_SESSION['email'] = $result[0]['email'];
+      }
+  } else {
+      echo '<script type="text/javascript">alert("登入失敗!請確認帳號或密碼");</script>'; ?>
+<script type="text/javascript">window.location.href="login.php"</script>; //重新導向
+<?php
+>>>>>>> origin/yeah
   }
