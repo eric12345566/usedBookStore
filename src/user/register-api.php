@@ -40,7 +40,6 @@
   }
 
  //驗證資料格式
-  //TODO username只能英文、數字、底線 
   if(preg_match('/^(?!.*[^\x21-\x7e])(?=.{4,50})(?=.*[\W])(?=.*[a-zA-Z])(?=.*\d).*$/', $password)) {
      if(preg_match('/^09[0-9]{8}$/' , $phonenumber)) {
         if(preg_match('/^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{2,5}$/',$email)) {
