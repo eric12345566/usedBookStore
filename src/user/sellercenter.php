@@ -108,113 +108,47 @@
             </div>
             <div class="row" style="margin-top: 2em;">
                 <span style="margin-left: 4em; font-family: Microsoft JhengHei;">
-                    <h5>上架中</h5>
+                    <h5>所有商品</h5>
                 </span>
                 <span style="margin: auto; margin-right: 0em;">
-                    <div class="search-container">
-                        <input type="text" placeholder="Search.." id="search">
-                        <input class="btn btn-primary" type="button" value="搜尋">
-                    </div>
+
                 </span>
             </div>
 
             <!--放置第一列Card-->
             <section id="CardRow1">
                 <div class="row" style="margin-top: 2em;">
-
                   <?php
                     for ($i=0 ; $i<$count ; $i++) {
+                        $link="'Book_information.php?product_no=".$result[$i]["product_no"]."'";
                         $status = "已售完或下架";
-                        if($result[$i]["avialiable"]) {
-                          $status = ;
+                        if ($result[$i]["avialiable"]) {
+                            $status = "上架中";
                         }
                         echo '<div class="col-md-4">
                           <div style="box-shadow:3px 3px 12px gray;width:250px;height:auto; margin-bottom: 5em;">
-                              <button type="button" class="btn btn-light">
-                                  <img src="image/card.jpg" alt="Denim Jeans" style="width:250px">
+                              <button type="button" class="card-button" onclick="location.href='.$link.'">
+                              <div class="card">
+                                <div class="box">
+                                  <img class="imgsize" class="card-img-top" src="data:image/png;base64,'.find_base64($result[$i]["product_no"]).'" alt="Card image cap"
                                   <div style="margin-left: 1em; font-family: Microsoft JhengHei;">
                                       <div style="font-size: larger;font-weight: bold;font-family: Microsoft JhengHei;">
                                           '.$result[$i]["book_name"].'
                                       </div>
-                                      <p>狀態: <span><a href="#" style="color: #8FBC94;">'.$result[$i][""].'</a></span></p>
-                                      <p>庫存量: 1/1</p>
-                                      <p>上架日期: 2020/06/20</p><br>
-                                      <p style="color: #8FBC94;">價格: 200元</p>
+                                      <p>狀態: <span><a href="#" style="color: #8FBC94;">'.$status.'</a></span></p>
+                                      <p>庫存量:'.$result[$i]["stock"].' </p>
+                                      <p>上架日期: '.$result[$i]["set_time"].'</p><br>
+                                      <p style="color: #8FBC94;">價格: '.$result[$i]["price"].'元</p>
+                                  </div>
+                                  </div>
                                   </div>
                               </button>
                           </div>
                       </div>';
                     }
-
                    ?>
-
-
-
-
-
                 </div>
             </section>
-
-            <section id="CardRow2">
-                <div class="row">
-                    <span style="margin-left: 4em; font-family: Microsoft JhengHei;">
-                        <h5>已售完/下架</h5>
-                    </span>
-                </div>
-                <div class="row" style="margin-top: 2em;">
-                    <div class="col-md-4">
-                        <div style="box-shadow:3px 3px 12px gray;width:250px;height:auto; margin-bottom: 5em;">
-                            <button type="button" class="btn btn-light">
-                                <img src="image/card.jpg" alt="Denim Jeans" style="width:250px">
-                                <div style="margin-left: 1em; font-family: Microsoft JhengHei;">
-                                    <div style="font-size: larger;font-weight: bold;font-family: Microsoft JhengHei;">
-                                        系統程式
-                                    </div>
-                                    <p>狀態: <span><a href="#" style="color: #8FBC94;">售完</a></span></p>
-                                    <p>庫存量: 0/1</p>
-                                    <p>上架日期: 2020/06/20</p><br>
-                                    <p style="color: #8FBC94;">價格: 200元</p>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div style="box-shadow:3px 3px 12px gray;width:250px;height:auto; margin-bottom: 5em;">
-                            <button type="button" class="btn btn-light">
-                                <img src="image/card1.jpg" alt="Denim Jeans" style="width:250px">
-                                <div style="margin-left: 1em; font-family: Microsoft JhengHei;">
-                                    <div style="font-size: larger;font-weight: bold;font-family: Microsoft JhengHei;">
-                                        系統程式
-                                    </div>
-                                    <p>狀態: <span><a href="#" style="color: #8FBC94;">售完</a></span></p>
-                                    <p>庫存量: 0/1</p>
-                                    <p>上架日期: 2020/06/20</p><br>
-                                    <p style="color: #8FBC94;">價格: 200元</p>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div style="box-shadow:3px 3px 12px gray;width:250px;height:auto; margin-bottom: 5em;">
-                            <button type="button" class="btn btn-light">
-                                <img src="image/card2.jpg" alt="Denim Jeans" style="width:250px">
-                                <div style="margin-left: 1em; font-family: Microsoft JhengHei;">
-                                    <div style="font-size: larger;font-weight: bold;font-family: Microsoft JhengHei;">
-                                        系統程式
-                                    </div>
-                                    <p>狀態: <span><a href="#" style="color: #8FBC94;">下架</a></span></p>
-                                    <p>庫存量: 1/1</p>
-                                    <p>上架日期: 2020/06/20</p><br>
-                                    <p style="color: #8FBC94;">價格: 200元</p>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-
     <!--This is bottombar-->
     <section id="header">
         <div class="container-fluid">
