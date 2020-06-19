@@ -14,10 +14,11 @@
   // 查詢資料庫
 
   // TODO: 針對使用者POST的資料做安全性過濾，再傳入 SQL 裡 query
-  //$hash = password_hash('qazzaqqaz', PASSWORD_DEFAULT, ['cost' => 11]);
+  //$hash = password_hash('user2user2', PASSWORD_DEFAULT, ['cost' => 11]);
   //echo $hash;
+  //exit;
   //有安全疑慮的寫法 $result = $db->execute("SELECT * FROM user WHERE username = " . "'" . $username. "'" . " AND password = " . "'" . $password . "';");
-  $result = $db->execute("SELECT * FROM USERNAME WHERE username = ?;", array($username));
+  $result = $db->execute("SELECT * FROM GeneralUser WHERE username = ?;", array($username));
   if ($db->getRowCount()) {
       if (password_verify($password, $result[0]["password"])) {
           echo "歡迎登入，". $username;
@@ -26,7 +27,7 @@
           <?php
           $_SESSION['username'] = $result[0]['username'];
       } else {
-          //echo '<script type="text/javascript">alert("登入失敗!密碼錯誤！");</script>';?>
+          echo '<script type="text/javascript">alert("登入失敗!密碼錯誤！");</script>'; ?>
   <script type="text/javascript">window.location.href="login.php"</script>; //重新導向
   <?php
       }

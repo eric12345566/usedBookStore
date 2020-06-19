@@ -53,46 +53,20 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[0]["book_name"] ; ?></div>
-              <p class="card-writer">作者：<?php echo $result[0]["author"] ; ?></p>
-              <p class="card-pay">價格： <?php echo $result[0]["price"] ; ?>元</p>
+        <?php
+        for ($i=0 ; $i<4 ; $i++) {
+            echo '<div class="col-md-3" style="padding: 3em;">
+            <div class="card">
+              <img class="card-img-top" src="./image/card.jpg" alt="Card image cap">
+              <div class="card-body">
+                <div class="card-book">'.$result[$i]["book_name"].'</div>
+                <p class="card-writer">作者 ：'.$result[$i]["author"].'</p>
+                <p class="card-pay">價格: '.$result[$i]["price"].'</p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[1]["book_name"] ; ?></div>
-              <p class="card-writer">作者：<?php echo $result[1]["author"] ; ?></p>
-              <p class="card-pay">價格：<?php echo $result[1]["price"] ; ?></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card2.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[2]["book_name"] ; ?></div>
-              <p class="card-writer">作者：<?php echo $result[2]["author"] ; ?></p>
-              <p class="card-pay">價格：<?php echo $result[2]["price"] ; ?></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card3.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[3]["book_name"] ; ?></div>
-              <p class="card-writer">作者：<?php echo $result[3]["author"] ; ?></p>
-              <p class="card-pay">價格：<?php echo $result[3]["price"] ; ?></p>
-            </div>
-          </div>
-        </div>
+          </div>' ;
+        }
+         ?>
       </div>
     </div>
   </section>
@@ -107,7 +81,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
-          <div class="label">商學熱門</div>
+          <div class="label">國貿熱門</div>
         </div>
         <div class="lookmore col-md-6">
           <button type="button" class="btn btn-light">看更多</button>
@@ -115,48 +89,24 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[0]["book_name"] ; ?></div>
-              <p class="card-writer">作者 ：<?php echo $result[0]["author"] ; ?></p>
-              <p class="card-pay">價格: <?php echo $result[0]["price"] ; ?></p>
+
+        <?php
+        for ($i=0 ; $i<4 ; $i++) {
+            echo '<div class="col-md-3" style="padding: 3em;">
+            <div class="card">
+              <img class="card-img-top" src="./image/card.jpg" alt="Card image cap">
+              <div class="card-body">
+                <div class="card-book">'.$result[$i]["book_name"].'</div>
+                <p class="card-writer">作者 ：'.$result[$i]["author"].'</p>
+                <p class="card-pay">價格: '.$result[$i]["price"].'</p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[1]["book_name"] ; ?></div>
-              <p class="card-writer">作者：<?php echo $result[1]["author"] ; ?></p>
-              <p class="card-pay">價格:<?php echo $result[1]["price"] ; ?></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card2.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[2]["book_name"] ; ?></div>
-              <p class="card-writer">作者：<?php echo $result[2]["author"] ; ?></p>
-              <p class="card-pay">價格:<?php echo $result[2]["price"] ; ?></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card3.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[3]["book_name"] ; ?></div>
-              <p class="card-writer">作者：<?php echo $result[3]["author"] ; ?></p>
-              <p class="card-pay">價格: <?php echo $result[3]["price"] ; ?></p>
-            </div>
-          </div>
-        </div>
+          </div>' ;
+        }
+         ?>
+
+       </div>
       </div>
-    </div>
   </section>
 
 
@@ -178,46 +128,20 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[0]["book_name"] ; ?></div>
-              <p class="card-writer">作者 ：<?php echo $result[0]["author"] ; ?></p>
-              <p class="card-pay">價格: <?php echo $result[0]["price"] ; ?></p>
+        <?php
+        for ($i=0 ; $i<4 ; $i++) {
+            echo '<div class="col-md-3" style="padding: 3em;">
+            <div class="card">
+              <img class="card-img-top" src="./image/card.jpg" alt="Card image cap">
+              <div class="card-body">
+                <div class="card-book">'.$result[$i]["book_name"].'</div>
+                <p class="card-writer">作者 ：'.$result[$i]["author"].'</p>
+                <p class="card-pay">價格: '.$result[$i]["price"].'</p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[1]["book_name"] ; ?></div>
-              <p class="card-writer">作者 ：<?php echo $result[1]["author"] ; ?></p>
-              <p class="card-pay">價格: <?php echo $result[1]["price"] ; ?></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card2.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[2]["book_name"] ; ?></div>
-              <p class="card-writer">作者 ：<?php echo $result[2]["author"] ; ?></p>
-              <p class="card-pay">價格: <?php echo $result[2]["price"] ; ?></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" style="padding: 3em;">
-          <div class="card">
-            <img class="card-img-top" src="./image/card3.jpg" alt="Card image cap">
-            <div class="card-body">
-              <div class="card-book"><?php echo $result[3]["book_name"] ; ?></div>
-              <p class="card-writer">作者 ：<?php echo $result[3]["author"] ; ?></p>
-              <p class="card-pay">價格: <?php echo $result[3]["price"] ; ?></p>
-            </div>
-          </div>
-        </div>
+          </div>' ;
+        }
+         ?>
       </div>
     </div>
   </section>
