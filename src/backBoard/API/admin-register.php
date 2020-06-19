@@ -13,10 +13,10 @@
   $isError = false;
   $error_msg = "000"; // 1: adminName error, 2: email error, 3: password error
 
-  // if (!preg_match('/^(?!.*[^\x21-\x7e])(?=.{4,10})(?=.*[\W])(?=.*[a-zA-Z])(?=.*\d).*$/', $password)) {
-  //     $error_msg[2] = '1';
-  //     $isError = true;
-  // }
+  if (!preg_match('/^(?!.*[^\x21-\x7e])(?=.{4,10})(?=.*[\W])(?=.*[a-zA-Z])(?=.*\d).*$/', $password)) {
+      $error_msg[2] = '1';
+      $isError = true;
+  }
 
   if (!preg_match('/^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{2,5}$/', $email)) {
       $error_msg[1] = '1';

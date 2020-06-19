@@ -122,7 +122,44 @@
                       <div class="modal-content">
                         <form action="./API/admin-register.php" method="post">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">新增管理者帳號</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="form-group">
+                              <label for="exampleInputadmin">管理者帳號</label>
+                              <input type="text" name="adminName" class="form-control" id="exampleInputadmin" required>
+                              <div class="invalid-feedback">帳號格式錯誤</div>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Email address</label>
+                              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                              <div class="invalid-feedback">電子郵件格式錯誤</div>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">密碼</label>
+                              <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+                              <div class="invalid-feedback">密碼格式錯誤 - 4~50字元，至少一個特殊符號，至少一個大小寫、0~9數字</div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">送出</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- admin account info Modal -->
+                  <div class="modal fade" id="admin-info" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <form action="./API/admin-register.php" method="post">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">查看/修改管理者帳號</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
@@ -200,7 +237,8 @@
 
       $('#myTable tbody').on('click', 'tr', function() {
         var data = table.row(this).data();
-        alert('You clicked on ' + data[0] + '\'s row');
+        // alert('You clicked on ' + data[0] + '\'s row');
+        $('#admin-info').modal('show');
         // document.location.href="http://" + location.hostname + "/ub/src" + "/backboard/index.php";
       });
 
