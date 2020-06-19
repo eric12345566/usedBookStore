@@ -53,7 +53,7 @@
       } else {
           $where = 'where book_name like "%'.'nope'.'%" ';
       }
-    echo $keyword; //show出 關鍵字
+    echo "關鍵字： ".$keyword; //show出 關鍵字
     $page_size = 5;
     $count = $db->execute("SELECT count(*) as C FROM book_product ".$where); //紀錄搜尋總數
     $amount = $count[0]["C"];
@@ -80,17 +80,6 @@
             //TODO: 放Card顯示出來
             echo "共有".$amount."筆資料！";
         } ?>
-        <section id="cardsection1">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="label">隨機推薦</div>
-              </div>
-              <div class="lookmore col-md-6">
-                <button type="button" class="btn btn-light">看更多</button>
-                <!--buttom-->
-              </div>
-            </div>
         <div class="row">
         <?php
         for ($i=0 ; $i<$amount ; $i++) {
@@ -105,49 +94,50 @@
             </div>
           </div>' ;
         } ?>
+      </div>
         <?php
     }
 ?>
 
 
 
-  <!--This is buttonbar-->
-  <footer>
-  <section id="header">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3">
-          <nav class="nav flex-column">
-            <h4 class="bottomtext">認識我們</h4>
-            <a class="nav-link bottomText" href="#">認識團隊</a>
-            <a class="nav-link bottomText" href="#">關於此專案</a>
-            <a class="nav-link bottomText" href="#">加入我們</a>
-          </nav>
-        </div>
-        <div class="col-md-3">
-          <nav class="nav flex-column">
-            <h4 class="bottomtext">網站地圖</h4>
-            <a class="nav-link bottomText" href="#">首頁</a>
-            <a class="nav-link bottomText" href="#">搜尋</a>
-            <a class="nav-link bottomText" href="#">分類</a>
-            <a class="nav-link bottomText" href="#">賣書</a>
-            <a class="nav-link bottomText" href="#">會員中心</a>
-          </nav>
-        </div>
-        <div class="col-md-3">
-          <nav class="nav flex-column">
-            <h4 class="bottomtext">聯絡我們</h4>
-            <a class="nav-link bottomText" href="#">錯誤回報</a>
-            <a class="nav-link bottomText" href="#">其他服務</a>
-          </nav>
-        </div>
-        <div class="col-md-3">
-          <nav class="nav flex-column">
-            <a class="nav-link active">logo</a>
-          </nav>
-        </div>
+<!--This is buttonbar-->
+<section id="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <nav class="nav flex-column">
+          <h4 class="bottomtext">認識我們</h4>
+          <a class="nav-link bottomText" href="#">認識團隊</a>
+          <a class="nav-link bottomText" href="#">關於此專案</a>
+          <a class="nav-link bottomText" href="#">加入我們</a>
+        </nav>
+      </div>
+      <div class="col-md-3">
+        <nav class="nav flex-column">
+          <h4 class="bottomtext">網站地圖</h4>
+          <a class="nav-link bottomText" href="#">首頁</a>
+          <a class="nav-link bottomText" href="#">搜尋</a>
+          <a class="nav-link bottomText" href="#">分類</a>
+          <a class="nav-link bottomText" href="#">賣書</a>
+          <a class="nav-link bottomText" href="#">會員中心</a>
+        </nav>
+      </div>
+      <div class="col-md-3">
+        <nav class="nav flex-column">
+          <h4 class="bottomtext">聯絡我們</h4>
+          <a class="nav-link bottomText" href="#">錯誤回報</a>
+          <a class="nav-link bottomText" href="#">其他服務</a>
+        </nav>
+      </div>
+      <div class="col-md-3">
+        <nav class="nav flex-column">
+          <a class="nav-link active">logo</a>
+        </nav>
       </div>
     </div>
-  </section>
-</footer>
+  </div>
+</section>
 </body>
+
+</html>

@@ -108,8 +108,6 @@
        </div>
       </div>
   </section>
-
-
   <!-- This is card-->
   <?php
     $result = $db->execute("SELECT * FROM book_product AS b,Classify_tag AS c
@@ -145,7 +143,7 @@
       </div>
     </div>
   </section>
-  
+
 
   <!--This is buttonbar-->
   <section id="header">

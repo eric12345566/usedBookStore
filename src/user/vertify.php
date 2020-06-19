@@ -82,7 +82,7 @@ window.location.href = "login.php";
                 if (checkpw() === false) {
                   alert("兩次輸入的密碼不一致！請再試一次");
                 } else {
-                  //document.getElementById("passform").submit()
+                  document.getElementById("passform").submit()
                 }
               }
               function checkpw() {
