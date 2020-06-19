@@ -9,13 +9,12 @@
   $order_no = $_GET['oid'];
 
   $db = Database::get();
-  $result = $db->execute("SELECT * FROM p_order WHERE order_no = ?;", array($order_no));
-  $item = $db->execute("SELECT * FROM items WHERE order_no = ?;", array($order_no));
+  $result = $db->execute("DELETE FROM p_order WHERE order_no = ?;", array($order_no));
+  // echo $db->getRowCount();
+  // echo $db->getErrorMessage();
   if ($db->getRowCount() > 0) {
-      $result[0]['item'] = $item;
       $data_json = json_encode($result);
       echo $data_json;
   }else{
-      echo "出現錯誤，請聯絡資工系的猴子學生們";
-      die();
+      echo "出事情了啊杯";
   }

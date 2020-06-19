@@ -130,28 +130,28 @@
                           <div class="modal-body">
                             <div class="form-group">
                               <label>訂單編號</label>
-                              <input type="text" class="form-control" id="info_order_no" disabled>
-                              <input type="hidden" name="order_no" class="form-control" id="order_no">
+                              <input type="text" class="form-control" disabled>
+                              <input type="hidden" name="order_no" class="form-control">
                             </div>
                             <div class="form-group">
                               <label>買家帳號</label>
-                              <input type="text" name="p_username" class="form-control" id="p_username">
+                              <input type="text" name="p_username" class="form-control">
                             </div>
                             <div class="form-group">
                               <label>賣家帳號</label>
-                              <input type="text" name="s_username" class="form-control" id="s_username" aria-describedby="emailHelp">
+                              <input type="text" name="s_username" class="form-control" aria-describedby="emailHelp">
                             </div>
                             <div class="form-group">
                               <label>書本商品編號</label>
-                              <input type="text" name="product_no" class="form-control" id="product_no">
+                              <input type="text" name="product_no" class="form-control">
                             </div>
                             <div class="form-group">
                               <label>商品數量</label>
-                              <input type="text" name="amount" class="form-control" id="amount">
+                              <input type="text" name="amount" class="form-control">
                             </div>
                             <div class="form-group">
                               <label>訂單狀態</label>
-                              <select class="form-control" id="order_status" name="order_status">
+                              <select class="form-control" name="order_status">
                                 <option>已交貨結案</option>
                                 <option>已媒合等待交書</option>
                                 <option>因爽約取消</option>
@@ -160,15 +160,15 @@
                             </div>
                             <div class="form-group">
                               <label>建立訂單時間</label>
-                              <input id="build_date" type="date" name="build_date" disabled>
+                              <input type="date" name="build_date" disabled>
                             </div>
                             <div class="form-group">
                               <label>訂單結案時間</label>
-                              <input id="complete_date" type="date" name="complete_date" disabled>
+                              <input type="date" name="complete_date" disabled>
                             </div>
                             <div class="form-group">
                               <label>取消訂單原因</label>
-                              <textarea class="form-control" id="cancel_reason" name="cancel_reason" rows="4"></textarea>
+                              <textarea class="form-control"name="cancel_reason" rows="4"></textarea>
                             </div>
                           </div>
                           <div class="modal-footer">
@@ -237,6 +237,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" id="delete">刪除</button>
                             <button type="submit" class="btn btn-primary">送出</button>
                           </div>
                         </form>
@@ -300,17 +301,23 @@
           url: './API/order/order-info.php',
           dataType: 'json',
           data: {
-            uid: datas[0]
+            oid: datas[0]
           },
           complete: function() {
             console.log("complete");
           },
           success: function(msg) {
             console.log(msg);
-            $('#info-adminName').val(msg[0].Admin_name);
-            $('#info-adminName-post').val(msg[0].Admin_name);
-            $('#info-adminEmail').val(msg[0].Email);
-
+            $('#order_no').val(msg[0].order_no);
+            $('#info_order_no').val(msg[0].order_no);
+            $('#p_username').val(msg[0].p_username);
+            $('#s_username').val(msg[0].s_username);
+            $('#product_no').val(msg[0].item[0].product_no);
+            $('#amount').val(msg[0].item[0].amount);
+            $('#build_date').val(msg[0].build_date);
+            $('#complete_date').val(msg[0].complete_date);
+            $('#order_status').val(msg[0].order_status);
+            $('#cancel_reason').val(msg[0].cancel_reason);
           },
           error: function(msg) {
             console.log(msg);
@@ -324,7 +331,7 @@
           url: './API/order/order-delete.php',
           dataType: 'json',
           data: {
-            uid: $('#info-adminName-post').val()
+            oid: $('#order_no').val()
           },
           complete: function() {
             console.log("complete");
