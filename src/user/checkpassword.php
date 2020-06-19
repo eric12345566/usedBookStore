@@ -16,8 +16,6 @@
           echo "請聯絡我們的助教";
       }
   } else {
-    <script>
-...JavaScript 程式碼...
-</script>
+
       // TODO 返回到輸入修改頁面
   }
