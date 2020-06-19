@@ -40,15 +40,15 @@
         <div id="myBar" class="container">
           <ul class="navbar-nav ml-auto">
             <col class="nav-item" />
-            <a href="#home-section" class="nav-link topNavbar active">首頁</a>
+            <a href="homepage.php" class="nav-link topNavbar active">首頁</a>
             <col class="nav-item" />
-            <a href="#explore-head-section" class="nav-link topNavbar">搜尋</a>
+            <a href="search.php" class="nav-link topNavbar">搜尋</a>
             <col class="nav-item" />
-            <a href="#author-head-section" class="nav-link topNavbar">分類</a>
+            <a href="classification" class="nav-link topNavbar">分類</a>
             <col class="nav-item" />
-            <a href="#mission-head-section" class="nav-link topNavbar">賣書</a>
+            <a href="seller_baseinformation.php" class="nav-link topNavbar">賣書</a>
             <col class="nav-item" />
-            <a href="#mission-head-section" class="nav-link topNavbar"
+            <a href="personinfo.php" class="nav-link topNavbar"
               >會員中心</a
             >
             <col class="nav-item" />
@@ -72,13 +72,13 @@
     <div class="card" id="card1">
       <div class="index">
         <div class="row">
-          <a href="#" id="profile">
+          <a href="personinfo.php" id="profile">
             <i class="fas fa-user" style="font-size: 1em;"></i>
             個人基本資料
           </a>
         </div>
         <div class="row">
-          <a href="#" id="change">
+          <a href="repassword.php" id="change">
             <i
               class="fas fa-shield-alt"
               style="color:lightblue; font-size: 1em;"
@@ -87,7 +87,7 @@
           </a>
         </div>
         <div class="row">
-          <a href="#" id="order">
+          <a href="order_info.php" id="order">
             <i
               class="fas fa-chart-line"
               style="color:gray; font-size: 1em;"

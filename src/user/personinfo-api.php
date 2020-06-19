@@ -10,12 +10,12 @@
   $newname = $_POST['newname'];
   $newphonenumber = $_POST['newphonenumber'];
   $newbdate = $_POST['newbdate'];
-  
+  $prefer_loc = $_POST['prefer_loc'];
   
 
   if(preg_match("/^[\x{4e00}-\x{9fa5}]+$/u",$newname)) {
       if(preg_match('/^09[0-9]{8}$/' , $newphonenumber)) {
-        $result = $db->execute("UPDATE generaluser SET name=?,phonenumber=?,bdate=? WHERE username = ?;", array($newname,$newphonenumber,$newbdate,$_SESSION['username']));  
+        $result = $db->execute("UPDATE generaluser SET name=?,phonenumber=?,bdate=?,prefer_loc=? WHERE username = ?;", array($newname,$newphonenumber,$newbdate,$prefer_loc,$_SESSION['username']));  
         if($db->getRowCount() == 1) {
         echo "基本資料修改完成";
         }
@@ -25,5 +25,5 @@
   } else {
     echo "姓名不符合格式"; 
   }
-
+?>
 

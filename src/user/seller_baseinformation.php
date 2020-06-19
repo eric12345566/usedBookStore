@@ -1,3 +1,12 @@
+<?php
+  require __DIR__ . '/../vendor/autoload.php';
+  // 建立 Session
+  session_start();
+  $db = Database::get();
+  
+  $result = $db->execute("SELECT * FROM generaluser WHERE username = ?;", array($_SESSION['username']));
+   
+?>
 
 <!DOCTYPE html>
 
@@ -24,18 +33,18 @@
           <div id="myBar" class="container">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <h2 style="position: fixed; left: 3em; color: darkcyan; font-family: Microsoft JhengHei;">二手書網</h2>
+                <h2 style="position: fixed; left: 4.3em; color: darkcyan; font-family: Microsoft JhengHei;">二手書網</h2>
               </li>
               <col class="nav-item">
-              <a href="#home-section" class="nav-link topNavbar active">首頁</a>
+              <a href="homepage.php" class="nav-link topNavbar active">首頁</a>
               <col class="nav-item">
-              <a href="#explore-head-section" class="nav-link topNavbar">搜尋</a>
+              <a href="search.php" class="nav-link topNavbar">搜尋</a>
               <col class="nav-item">
-              <a href="#author-head-section" class="nav-link topNavbar">分類</a>
+              <a href="classification" class="nav-link topNavbar">分類</a>
               <col class="nav-item">
-              <a href="#mission-head-section" class="nav-link topNavbar">賣書</a>
+              <a href="seller_baseinformation.php" class="nav-link topNavbar">賣書</a>
               <col class="nav-item">
-              <a href="#mission-head-section" class="nav-link topNavbar">會員中心</a>
+              <a href="personinfo.php" class="nav-link topNavbar">會員中心</a>
               <col class="nav-item">
               <img src="image/card.jpg" alt="Avatar" id="account">
             </ul>
@@ -58,14 +67,14 @@
         <div class="card" id="card1">
           <div class="index">
             <div class="row">
-              <a href="#" id="profile">
+              <a href="seller_baseinformation.php" id="profile">
                 <i class="fas fa-user" style="font-size: 1em;"></i>
                 賣家基本資料
               </a>
             </div>
   
             <div class="row">
-              <a href="#" id="change">
+              <a href="create_commodity.php" id="change">
                 <i
                   class="fas fa-shield-alt"
                   style="color:lightblue; font-size: 1em;"
@@ -74,7 +83,7 @@
               </a>
             </div>
             <div class="row">
-              <a href="#" id="order">
+              <a href="order_info.php" id="order">
                 <i
                   class="fas fa-chart-line"
                   style="color:gray; font-size: 1em;"
@@ -111,27 +120,16 @@
                 <div class="input_div">
                   <div class="input">
                     <div class="row">
-                      <span class="input_text">地址:&nbsp; </span>
-                      <span class="information_text"
-                        >台中市⻄屯區逢甲路⼆段98號</span
-                      >
+                      <span class="input_text">地址:&nbsp; <?php echo $result[0]['address'] ; ?> </span>
+                      <span class="information_text"</span>
                     </div>
                   </div>
-  
-                  <div class="input">
-                    <div class="row">
-                      <div class="input_text">
-                        統一編號 :&nbsp;
-                        <span class="information_text">52005505 </span>
-                      </div>
-                    </div>
-                  </div>
-  
+
                   <div class="input">
                     <div class="row">
                       <div class="input_text">
                         負責人 :&nbsp;
-                        <span class="information_text">師灌腸 </span>
+                        <span class="information_text"><?php echo $result[0]['man_in_charge'] ; ?> </span>
                       </div>
                     </div>
                   </div>
@@ -140,23 +138,18 @@
   
               <div class="col-sm-5">
                 <!--右邊區塊-->
-                <div class="input_div">
-  
+                
+                
+
+                <div class="input">
                   <div class="row">
-                    <span class="input_text" style="font-size: 1em;"
-                      >營業時間: &nbsp; </span
-                    >
-                    <input
-                      style="width: 70%;"
-                      name="bdate"
-                      class="form-control"
-                      type="date"
-                      value="2011-08-19"
-                      id="example-date-input"
-                    />
+                    <div class="input_text">
+                      註冊商家名稱 :&nbsp;
+                      <span class="information_text"><?php echo $result[0]['register_name'] ; ?> </span>
+                    </div>
                   </div>
                 </div>
-  
+
               </div>
             </div>
           </div>
