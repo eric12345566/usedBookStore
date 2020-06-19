@@ -4,6 +4,10 @@
   if (!isset($_SESSION['adminName'])) {
       header("Location: http://" . Server::serverUrl . Server::prefixUrl . "/backboard/login.php");
   }
+  $db = Database::get();
+  $userCount = $db->execute("SELECT COUNT(*) FROM GeneralUser");
+  $userNotVerifyCount = $db->execute("SELECT COUNT(*) FROM GeneralUser WHERE std_authen = 0");
+  $orderCount = $db->execute("SELECT COUNT(*) FROM p_order");
  ?>
 <!doctype html>
 <html lang="zh-tw">
@@ -15,6 +19,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
   <link rel="stylesheet" href="./style/base.css">
   <link rel="stylesheet" href="./style/index.css">
   <title>Admin Dashboard</title>
@@ -103,8 +108,8 @@
                   <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">用戶人數</h5>
-                      <p class="card-text big-number">123</p>
-                      <a href="#" class="btn btn-primary">查看用戶</a>
+                      <p class="card-text big-number"><?php echo $userCount[0][0] ?></p>
+                      <a href="./accounts.php" class="btn btn-primary">查看用戶</a>
                     </div>
                   </div>
                 </div>
@@ -112,8 +117,8 @@
                   <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">尚未身份驗證</h5>
-                      <p class="card-text big-number">20</p>
-                      <a href="#" class="btn btn-primary">立刻審核</a>
+                      <p class="card-text big-number"><?php echo $userNotVerifyCount[0][0] ?></p>
+                      <a href="./accounts.php" class="btn btn-primary">立刻審核</a>
                     </div>
                   </div>
                 </div>
@@ -121,8 +126,8 @@
                   <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">訂單總數</h5>
-                      <p class="card-text big-number">2050</p>
-                      <a href="#" class="btn btn-primary">查看訂單</a>
+                      <p class="card-text big-number"><?php echo $orderCount[0][0] ?></p>
+                      <a href="./order.php" class="btn btn-primary">查看訂單</a>
                     </div>
                   </div>
                 </div>
@@ -133,7 +138,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12">
-                  <table class="table">
+                  <table class="table" id="myTable">
                     <thead class="thead-dark">
                       <tr>
                         <th scope="col">Time</th>
@@ -180,9 +185,19 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    var table = $('#myTable').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "./API/log-table.php"
+      });
+  });
+  </script>
 </body>
 
 </html>
