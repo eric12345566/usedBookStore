@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../../vendor/autoload.php';
 /*
  * DataTables example server-side processing script.
  *
@@ -19,18 +19,22 @@ require __DIR__ . '/../../vendor/autoload.php';
  */
 
 // DB table to use
-$table = 'Admin';
+$table = 'p_order';
 
 // Table's primary key
-$primaryKey = 'Admin_name';
+$primaryKey = 'order_no';
 
 // Array of database columns which should be read and sent back to DataTables.
 // The `db` parameter represents the column name in the database, while the `dt`
 // parameter represents the DataTables column identifier. In this case simple
 // indexes
 $columns = array(
-    array( 'db' => 'Admin_name', 'dt' => 0 ),
-    array( 'db' => 'Email',  'dt' => 1 ),
+    array( 'db' => 'order_no', 'dt' => 0 ),
+    array( 'db' => 'p_username',  'dt' => 1 ),
+    array( 'db' => 's_username',   'dt' => 2 ),
+    array( 'db' => 'order_status',     'dt' => 3 ),
+    array( 'db' => 'build_date',    'dt' => 4),
+    array( 'db' => 'complete_date',    'dt' => 5),
 );
 
 // SQL server connection information
@@ -47,7 +51,7 @@ $sql_details = array(
  * server-side, there is no need to edit below this line.
  */
 
-require('ssp.class.php');
+require('../ssp.class.php');
 
 echo json_encode(
     SSP::simple($_GET, $sql_details, $table, $primaryKey, $columns)

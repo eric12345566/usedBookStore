@@ -64,7 +64,7 @@
               </svg>
               用戶管理
             </a>
-            <a class="nav-link" href="./order.php" role="tab"><svg class="bi bi-cart3" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <a class="nav-link active" href="./order.php" role="tab"><svg class="bi bi-cart3" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
               </svg> 訂單管理</a>
@@ -87,7 +87,7 @@
                 <circle cx="3.5" cy="8" r=".5" />
                 <circle cx="3.5" cy="10.5" r=".5" />
               </svg> 學校列表管理</a>
-            <a class="nav-link active" href="./admin.php" role="tab"> <svg class="bi bi-gear" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <a class="nav-link" href="./admin.php" role="tab"> <svg class="bi bi-gear" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
                 <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z" />
@@ -99,7 +99,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12">
-                  <h2>管理者帳號</h2>
+                  <h2>訂單管理</h2>
                 </div>
               </div>
             </div>
@@ -113,35 +113,62 @@
                     <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
                       <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
-                    </svg> 新增管理者帳號
+                    </svg> 新增訂單
                   </button>
 
                   <!-- Modal -->
                   <div class="modal fade" id="register" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-xl">
                       <div class="modal-content">
-                        <form action="./API/admin/admin-register.php" method="post">
+                        <form action="./API/order/order-new.php" method="post">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">新增管理者帳號</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">新增訂單</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
                             <div class="form-group">
-                              <label for="exampleInputadmin">管理者帳號</label>
-                              <input type="text" name="adminName" class="form-control" id="exampleInputadmin" required>
-                              <div class="invalid-feedback">帳號格式錯誤</div>
+                              <label>訂單編號</label>
+                              <input type="text" class="form-control" id="info_order_no" disabled>
+                              <input type="hidden" name="order_no" class="form-control" id="order_no">
                             </div>
                             <div class="form-group">
-                              <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                              <div class="invalid-feedback">電子郵件格式錯誤</div>
+                              <label>買家帳號</label>
+                              <input type="text" name="p_username" class="form-control" id="p_username">
                             </div>
                             <div class="form-group">
-                              <label for="exampleInputPassword1">密碼</label>
-                              <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
-                              <div class="invalid-feedback">密碼格式錯誤 - 4~50字元，至少一個特殊符號，至少一個大小寫、0~9數字</div>
+                              <label>賣家帳號</label>
+                              <input type="text" name="s_username" class="form-control" id="s_username" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                              <label>書本商品編號</label>
+                              <input type="text" name="product_no" class="form-control" id="product_no">
+                            </div>
+                            <div class="form-group">
+                              <label>商品數量</label>
+                              <input type="text" name="amount" class="form-control" id="amount">
+                            </div>
+                            <div class="form-group">
+                              <label>訂單狀態</label>
+                              <select class="form-control" id="order_status" name="order_status">
+                                <option>已交貨結案</option>
+                                <option>已媒合等待交書</option>
+                                <option>因爽約取消</option>
+                                <option>買賣家取消訂單</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label>建立訂單時間</label>
+                              <input id="build_date" type="date" name="build_date" disabled>
+                            </div>
+                            <div class="form-group">
+                              <label>訂單結案時間</label>
+                              <input id="complete_date" type="date" name="complete_date" disabled>
+                            </div>
+                            <div class="form-group">
+                              <label>取消訂單原因</label>
+                              <textarea class="form-control" id="cancel_reason" name="cancel_reason" rows="4"></textarea>
                             </div>
                           </div>
                           <div class="modal-footer">
@@ -153,38 +180,63 @@
                     </div>
                   </div>
 
-                  <!-- admin account info Modal -->
-                  <div class="modal fade" id="admin-info" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <!-- order info Modal -->
+                  <div class="modal fade" id="order_info" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-xl">
                       <div class="modal-content">
-                        <form action="./API/admin/admin-update.php" method="post">
+                        <form action="./API/order/order-new.php" method="post">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">查看/修改管理者帳號</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">查詢/修改訂單</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
                             <div class="form-group">
-                              <label for="exampleInputadmin">管理者帳號</label>
-                              <input type="text" class="form-control" id="info-adminName" disabled>
-                              <input type="hidden" name="adminName" class="form-control" id="info-adminName-post">
-                              <div class="invalid-feedback">帳號格式錯誤</div>
+                              <label>訂單編號</label>
+                              <input type="text" class="form-control" id="info_order_no" disabled>
+                              <input type="hidden" name="order_no" class="form-control" id="order_no">
                             </div>
                             <div class="form-group">
-                              <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" name="email" class="form-control" id="info-adminEmail" aria-describedby="emailHelp" required>
-                              <div class="invalid-feedback">電子郵件格式錯誤</div>
+                              <label>買家帳號</label>
+                              <input type="text" name="p_username" class="form-control" id="p_username">
                             </div>
                             <div class="form-group">
-                              <label for="exampleInputPassword1">密碼</label>
-                              <input type="password" name="password" class="form-control" id="info-adminPassword" required>
-                              <div class="invalid-feedback">密碼格式錯誤 - 4~50字元，至少一個特殊符號，至少一個大小寫、0~9數字</div>
+                              <label>賣家帳號</label>
+                              <input type="text" name="s_username" class="form-control" id="s_username" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                              <label>書本商品編號</label>
+                              <input type="text" name="product_no" class="form-control" id="product_no">
+                            </div>
+                            <div class="form-group">
+                              <label>商品數量</label>
+                              <input type="text" name="amount" class="form-control" id="amount">
+                            </div>
+                            <div class="form-group">
+                              <label>訂單狀態</label>
+                              <select class="form-control" id="order_status" name="order_status">
+                                <option>已交貨結案</option>
+                                <option>已媒合等待交書</option>
+                                <option>因爽約取消</option>
+                                <option>買賣家取消訂單</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label>建立訂單時間</label>
+                              <input id="build_date" type="date" name="build_date" disabled>
+                            </div>
+                            <div class="form-group">
+                              <label>訂單結案時間</label>
+                              <input id="complete_date" type="date" name="complete_date" disabled>
+                            </div>
+                            <div class="form-group">
+                              <label>取消訂單原因</label>
+                              <textarea class="form-control" id="cancel_reason" name="cancel_reason" rows="4"></textarea>
                             </div>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger" id="delete">刪除</button>
                             <button type="submit" class="btn btn-primary">送出</button>
                           </div>
                         </form>
@@ -202,14 +254,16 @@
                   <table class="table" id="myTable">
                     <thead class="thead-dark">
                       <tr>
-                        <th>Admin Name</th>
-                        <th>Email</th>
+                        <th>訂單編號</th>
+                        <th>買家帳號</th>
+                        <th>賣家帳號</th>
+                        <th>訂單狀態</th>
+                        <th>建立訂單時間</th>
+                        <th>訂單結案時間</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th>eric</th>
-                        <td>eric12345566@gmail.com</td>
                       </tr>
                     </tbody>
                   </table>
@@ -234,16 +288,16 @@
       var table = $('#myTable').DataTable({
         "processing": true,
         "serverSide": true,
-        "ajax": "./API/admin/admin-table.php"
+        "ajax": "./API/order/order-table.php"
       });
 
       $('#myTable tbody').on('click', 'tr', function() {
         var datas = table.row(this).data();
         // alert('You clicked on ' + data[0] + '\'s row');
-        $('#admin-info').modal('show');
+        $('#order_info').modal('show');
         $.ajax({
           type: 'GET',
-          url: './API/admin/admin-info.php',
+          url: './API/order/order-info.php',
           dataType: 'json',
           data: {
             uid: datas[0]
@@ -267,7 +321,7 @@
       $('#delete').click(function(){
         $.ajax({
           type: 'GET',
-          url: './API/admin/admin-delete.php',
+          url: './API/order/order-delete.php',
           dataType: 'json',
           data: {
             uid: $('#info-adminName-post').val()
@@ -280,37 +334,38 @@
             location.reload();
           },
           error: function(msg) {
+            console.log("error");
             console.log(msg);
           }
         });
       });
 
-      let url = new URL(location.href);
-      let params = url.searchParams;
-      let errorMsg = "";
-
-      for (let pair of params.entries()) {
-        console.log(`key: ${pair[0]}, value: ${pair[1]}`);
-        if(pair[0] === "errormsg"){
-          errorMsg = pair[1];
-        }
-      }
-
-      if(errorMsg){
-        $('#register').modal('show');
-
-        if(errorMsg[0] === '1'){
-          $('#exampleInputadmin').addClass("is-invalid");
-        }
-
-        if(errorMsg[1] === '1'){
-          $('#exampleInputEmail1').addClass("is-invalid");
-        }
-
-        if(errorMsg[2] === '1'){
-          $('#exampleInputPassword1').addClass("is-invalid");
-        }
-      }
+      // let url = new URL(location.href);
+      // let params = url.searchParams;
+      // let errorMsg = "";
+      //
+      // for (let pair of params.entries()) {
+      //   console.log(`key: ${pair[0]}, value: ${pair[1]}`);
+      //   if(pair[0] === "errormsg"){
+      //     errorMsg = pair[1];
+      //   }
+      // }
+      //
+      // if(errorMsg){
+      //   $('#register').modal('show');
+      //
+      //   if(errorMsg[0] === '1'){
+      //     $('#exampleInputadmin').addClass("is-invalid");
+      //   }
+      //
+      //   if(errorMsg[1] === '1'){
+      //     $('#exampleInputEmail1').addClass("is-invalid");
+      //   }
+      //
+      //   if(errorMsg[2] === '1'){
+      //     $('#exampleInputPassword1').addClass("is-invalid");
+      //   }
+      // }
     });
   </script>
 </body>

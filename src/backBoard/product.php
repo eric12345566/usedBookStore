@@ -18,8 +18,8 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 
   <link rel="stylesheet" href="./style/base.css">
-  <link rel="stylesheet" href="./style/admin.css">
-  <title>管理者帳號 - Admin Dashboard</title>
+  <link rel="stylesheet" href="./style/accounts.css">
+  <title>商品管理 - Admin Dashboard</title>
 </head>
 
 <body>
@@ -68,7 +68,7 @@
                 <path fill-rule="evenodd"
                   d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
               </svg> 訂單管理</a>
-            <a class="nav-link" href="./product.php" role="tab"> <svg class="bi bi-gift" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <a class="nav-link active" href="./product.php" role="tab"> <svg class="bi bi-gift" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M2 6v8.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V6h1v8.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V6h1zm8-5a1.5 1.5 0 0 0-1.5 1.5c0 .098.033.16.12.227.103.081.272.15.49.2A3.44 3.44 0 0 0 9.96 3h.015L10 2.999l.025.002h.014A2.569 2.569 0 0 0 10.293 3c.17-.006.387-.026.598-.073.217-.048.386-.118.49-.199.086-.066.119-.13.119-.227A1.5 1.5 0 0 0 10 1zm0 3h-.006a3.535 3.535 0 0 1-.326 0 4.435 4.435 0 0 1-.777-.097c-.283-.063-.614-.175-.885-.385A1.255 1.255 0 0 1 7.5 2.5a2.5 2.5 0 0 1 5 0c0 .454-.217.793-.506 1.017-.27.21-.602.322-.885.385a4.434 4.434 0 0 1-1.104.099H10z" />
                 <path fill-rule="evenodd"
@@ -87,7 +87,7 @@
                 <circle cx="3.5" cy="8" r=".5" />
                 <circle cx="3.5" cy="10.5" r=".5" />
               </svg> 學校列表管理</a>
-            <a class="nav-link active" href="./admin.php" role="tab"> <svg class="bi bi-gear" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <a class="nav-link" href="./admin.php" role="tab"> <svg class="bi bi-gear" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
                 <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z" />
@@ -99,117 +99,119 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12">
-                  <h2>管理者帳號</h2>
+                  <h2>商品管理</h2>
                 </div>
               </div>
             </div>
           </section>
-          <section id="admin-op">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12">
-                  <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#register">
-                    <svg class="bi bi-plus" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
-                      <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
-                    </svg> 新增管理者帳號
-                  </button>
+          <!-- user account info Modal -->
+          <div class="modal fade" id="account-info" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <form action="./API/product/product-update.php" method="post">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">查看/修改商品</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label>產品編號</label>
+                      <input type="text" class="form-control" id="info-pno" disabled>
+                      <input type="hidden" name="product_no" class="form-control" id="product_no">
+                    </div>
+                    <div class="form-group">
+                      <label>書名</label>
+                      <input type="text" name="book_name" class="form-control" id="book_name">
+                    </div>
+                    <div class="form-group">
+                      <label>ISBN</label>
+                      <input type="text" name="ISBN" class="form-control" id="ISBN">
+                    </div>
+                    <div class="form-group">
+                      <label>出版商</label>
+                      <input type="text" name="publisher" class="form-control" id="publisher">
+                    </div>
+                    <div class="form-group">
+                      <label>出版時間</label>
+                      <input id="publish_date" type="date" name="publish_date">
+                    </div>
+                    <div class="form-group">
+                      <label>價格</label>
+                      <input type="text" name="price" class="form-control" id="price">
+                    </div>
+                    <div class="form-group">
+                      <label>上架/下架</label>
+                      <select class="form-control" id="avialiable" name="avialiable">
+                        <option>0</option>
+                        <option>1</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">語言</label>
+                      <input type="text" name="b_language" class="form-control" id="b_language">
+                    </div>
+                    <div class="form-group">
+                      <label>外觀狀態</label>
+                      <input type="text" name="exterior" class="form-control" id="exterior">
+                    </div>
+                    <div class="form-group">
+                      <label>存量</label>
+                      <input type="text" name="stock" class="form-control" id="stock">
+                    </div>
+                    <div class="form-group">
+                      <label>作者</label>
+                      <input type="text" name="author" class="form-control" id="author">
+                    </div>
+                    <div class="form-group">
+                      <label>簡介</label>
+                      <textarea class="form-control" id="introduce" name="introduce" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label>賣家</label>
+                      <input type="text" class="form-control" id="username" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label>建立時間</label>
+                      <input type="text" class="form-control" id="set_time" disabled>
+                    </div>
+                    <div id="img-block">
 
-                  <!-- Modal -->
-                  <div class="modal fade" id="register" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
-                      <div class="modal-content">
-                        <form action="./API/admin/admin-register.php" method="post">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">新增管理者帳號</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <div class="form-group">
-                              <label for="exampleInputadmin">管理者帳號</label>
-                              <input type="text" name="adminName" class="form-control" id="exampleInputadmin" required>
-                              <div class="invalid-feedback">帳號格式錯誤</div>
-                            </div>
-                            <div class="form-group">
-                              <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                              <div class="invalid-feedback">電子郵件格式錯誤</div>
-                            </div>
-                            <div class="form-group">
-                              <label for="exampleInputPassword1">密碼</label>
-                              <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
-                              <div class="invalid-feedback">密碼格式錯誤 - 4~50字元，至少一個特殊符號，至少一個大小寫、0~9數字</div>
-                            </div>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">送出</button>
-                          </div>
-                        </form>
-                      </div>
                     </div>
                   </div>
-
-                  <!-- admin account info Modal -->
-                  <div class="modal fade" id="admin-info" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
-                      <div class="modal-content">
-                        <form action="./API/admin/admin-update.php" method="post">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">查看/修改管理者帳號</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <div class="form-group">
-                              <label for="exampleInputadmin">管理者帳號</label>
-                              <input type="text" class="form-control" id="info-adminName" disabled>
-                              <input type="hidden" name="adminName" class="form-control" id="info-adminName-post">
-                              <div class="invalid-feedback">帳號格式錯誤</div>
-                            </div>
-                            <div class="form-group">
-                              <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" name="email" class="form-control" id="info-adminEmail" aria-describedby="emailHelp" required>
-                              <div class="invalid-feedback">電子郵件格式錯誤</div>
-                            </div>
-                            <div class="form-group">
-                              <label for="exampleInputPassword1">密碼</label>
-                              <input type="password" name="password" class="form-control" id="info-adminPassword" required>
-                              <div class="invalid-feedback">密碼格式錯誤 - 4~50字元，至少一個特殊符號，至少一個大小寫、0~9數字</div>
-                            </div>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger" id="delete">刪除</button>
-                            <button type="submit" class="btn btn-primary">送出</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="delete">刪除</button>
+                    <button type="submit" class="btn btn-primary">送出</button>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
-          </section>
-          <section id="admin-list">
+          </div>
+          <section id="user-list">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12">
                   <table class="table" id="myTable">
                     <thead class="thead-dark">
                       <tr>
-                        <th>Admin Name</th>
-                        <th>Email</th>
+                        <th>書籍編號</th>
+                        <th>書名</th>
+                        <th>ISBN</th>
+                        <th>價格</th>
+                        <th>賣家</th>
+                        <th>上架日期</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th>eric</th>
-                        <td>eric12345566@gmail.com</td>
+                        <td>ericlion</td>
+                        <td>施冠彰</td>
+                        <td>逢甲大學</td>
+                        <td>正常</td>
+                        <td>正常</td>
+                        <td>正常</td>
                       </tr>
                     </tbody>
                   </table>
@@ -234,29 +236,41 @@
       var table = $('#myTable').DataTable({
         "processing": true,
         "serverSide": true,
-        "ajax": "./API/admin/admin-table.php"
+        "ajax": "./API/product/product-table.php"
       });
 
       $('#myTable tbody').on('click', 'tr', function() {
-        var datas = table.row(this).data();
-        // alert('You clicked on ' + data[0] + '\'s row');
-        $('#admin-info').modal('show');
+        var data = table.row(this).data();
+        //alert('You clicked on ' + data[0] + '\'s row');
+        $('#account-info').modal('show');
         $.ajax({
           type: 'GET',
-          url: './API/admin/admin-info.php',
+          url: './API/product/product-info.php',
           dataType: 'json',
           data: {
-            uid: datas[0]
+            pid: data[0]
           },
           complete: function() {
             console.log("complete");
           },
           success: function(msg) {
             console.log(msg);
-            $('#info-adminName').val(msg[0].Admin_name);
-            $('#info-adminName-post').val(msg[0].Admin_name);
-            $('#info-adminEmail').val(msg[0].Email);
 
+            $('#info-pno').val(msg[0].product_no);
+            $('#product_no').val(msg[0].product_no);
+            $('#book_name').val(msg[0].book_name);
+            $('#ISBN').val(msg[0].ISBN);
+            $('#publisher').val(msg[0].publisher);
+            $('#publish_date').val(msg[0].publish_date);
+            $('#price').val(msg[0].price);
+            $('#avialiable').val(msg[0].avialiable);
+            $('#b_language').val(msg[0].b_language);
+            $('#exterior').val(msg[0].exterior);
+            $('#stock').val(msg[0].stock);
+            $('#author').val(msg[0].author);
+            $('#introduce').val(msg[0].introduce);
+            $('#username').val(msg[0].username);
+            $('#set_time').val(msg[0].set_time);
           },
           error: function(msg) {
             console.log(msg);
@@ -267,10 +281,10 @@
       $('#delete').click(function(){
         $.ajax({
           type: 'GET',
-          url: './API/admin/admin-delete.php',
+          url: './API/product/product-delete.php',
           dataType: 'json',
           data: {
-            uid: $('#info-adminName-post').val()
+            pid: $('#product_no').val()
           },
           complete: function() {
             console.log("complete");
@@ -280,37 +294,12 @@
             location.reload();
           },
           error: function(msg) {
+            console.log("error");
+            alert("刪除失敗，請聯絡管理員");
             console.log(msg);
           }
         });
       });
-
-      let url = new URL(location.href);
-      let params = url.searchParams;
-      let errorMsg = "";
-
-      for (let pair of params.entries()) {
-        console.log(`key: ${pair[0]}, value: ${pair[1]}`);
-        if(pair[0] === "errormsg"){
-          errorMsg = pair[1];
-        }
-      }
-
-      if(errorMsg){
-        $('#register').modal('show');
-
-        if(errorMsg[0] === '1'){
-          $('#exampleInputadmin').addClass("is-invalid");
-        }
-
-        if(errorMsg[1] === '1'){
-          $('#exampleInputEmail1').addClass("is-invalid");
-        }
-
-        if(errorMsg[2] === '1'){
-          $('#exampleInputPassword1').addClass("is-invalid");
-        }
-      }
     });
   </script>
 </body>
