@@ -49,7 +49,7 @@
             }
           </script>
           <div class="forgot">
-            <button type="button" class="btn btn-link" style="font-size: 0.9em;">忘記密碼</button>
+            <button type="button" class="btn btn-link" style="font-size: 0.9em;" onclick="javascript:location.href='http://localhost/eric12345566/src/user/forget_passwd.php'">忘記密碼</button>
           </div>
         </div>
       </div>
