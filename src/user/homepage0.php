@@ -1,5 +1,5 @@
 <?php
-  require __DIR__ . '/../src/vendor/autoload.php';
+ require __DIR__ . '/../vendor/autoload.php';
   $db = Database::get();
   $result = $db->execute("SELECT * FROM book_product;", array());
   if ($db->getRowCount()) {
