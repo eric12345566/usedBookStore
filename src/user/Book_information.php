@@ -125,9 +125,9 @@
 
             <div>
               價格:&nbsp;&nbsp;NT$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="price"><?php echo $result[0]["price"]; ?></a>
-              <button type="button" id="paybuttom" class="btn btn-primary btn-lg">
+              <a href="TransactionOrder-new-api.php?pid=<?php echo $product_no; ?>" id="paybuttom" class="btn btn-primary btn-lg">
                 立即購買
-              </button>
+              </a>
             </div>
           </section>
         </div>

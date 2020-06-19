@@ -85,17 +85,17 @@
           <h2 style="position: fixed; left: 3em; color: darkcyan; font-family: Microsoft JhengHei;">二手書網</h2>
         </li>
         <col class="nav-item">
-        <a href="#home-section" class="nav-link topNavbar active">首頁</a>
+        <a href="homepage.php" class="nav-link topNavbar active">首頁</a>
         <col class="nav-item">
-        <a href="#explore-head-section" class="nav-link topNavbar">搜尋</a>
+        <a href="search.php" class="nav-link topNavbar">搜尋</a>
         <col class="nav-item">
-        <a href="#author-head-section" class="nav-link topNavbar">分類</a>
+        <a href="classification.php" class="nav-link topNavbar">分類</a>
         <col class="nav-item">
-        <a href="#mission-head-section" class="nav-link topNavbar">賣書</a>
+        <a href="sellercenter.php" class="nav-link topNavbar">賣書</a>
         <col class="nav-item">
-        <a href="#mission-head-section" class="nav-link topNavbar">會員中心</a>
+        <a href="#" class="nav-link topNavbar">會員中心</a>
         <col class="nav-item">
-        <img src="image/card.jpg" alt="Avatar" id="account">
+        <a href="login.php"><img src="image/account.png" alt="Avatar" id="account"></a>
       </ul>
     </div>
   </nav>
