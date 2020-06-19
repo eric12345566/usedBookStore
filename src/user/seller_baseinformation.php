@@ -52,7 +52,7 @@
                 >搜尋</a
               >
               <col class="nav-item" />
-              <a href="classification" class="nav-link topNavbar">分類</a>
+              <a href="classification.php" class="nav-link topNavbar">分類</a>
               <col class="nav-item" />
               <a href="seller_baseinformation.php" class="nav-link topNavbar"
                 >賣書</a

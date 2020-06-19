@@ -162,4 +162,18 @@ button.btn.btn-light {
     color: white;
 }
 
+.pcard {
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+.pcontent{
+  padding: 0;
+  margin: 0;
+}
+
+.pbtn{
+  margin-top: 1em;
+}
+
 

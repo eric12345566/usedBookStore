@@ -47,18 +47,18 @@
             <div id="myBar" class="container">
               <ul class="navbar-nav ml-auto">
                 <col class="nav-item" />
-                <a href="#home-section" class="nav-link topNavbar active">首頁</a>
+                <a href="homepage.php" class="nav-link topNavbar active">首頁</a>
                 <col class="nav-item" />
-                <a href="#explore-head-section" class="nav-link topNavbar">搜尋</a>
+                <a href="search.php" class="nav-link topNavbar">搜尋</a>
                 <col class="nav-item" />
-                <a href="#author-head-section" class="nav-link topNavbar">分類</a>
+                <a href="classification.php" class="nav-link topNavbar">分類</a>
                 <col class="nav-item" />
-                <a href="#mission-head-section" class="nav-link topNavbar">賣書</a>
+                <a href="sellercenter.php" class="nav-link topNavbar">賣書</a>
                 <col class="nav-item" />
-                <a href="#mission-head-section" class="nav-link topNavbar">會員中心</a>
+                <a href="personinfo.php" class="nav-link topNavbar">會員中心</a>
                 <col class="nav-item" />
                 <col class="nav-item" />
-                <img src="image/account.png" alt="Avatar" id="account" />
+                <a href="login.php"><img src="image/account.png" alt="Avatar" id="account"></a>
                 <col class="nav-item" />
               </ul>
             </div>

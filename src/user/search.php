@@ -24,9 +24,9 @@
           <col class="nav-item">
           <a href="classification.php" class="nav-link topNavbar">分類</a>
           <col class="nav-item">
-          <a href="sellercenter.php" class="nav-link topNavbar">賣書</a>
+          <a href="seller_baseinformation.php" class="nav-link topNavbar">賣書</a>
           <col class="nav-item">
-          <a href="" class="nav-link topNavbar">會員中心</a>
+          <a href="personinfo.php" class="nav-link topNavbar">會員中心</a>
           <col class="nav-item">
           <a href="login.php"><img src="image/account.png" alt="Avatar" id="account"></a>
       </ul>
