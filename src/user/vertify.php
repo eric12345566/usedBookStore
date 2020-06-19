@@ -59,7 +59,7 @@ window.location.href = "login.php";
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                       <p class="input_text">輸入新密碼</p>
-                      <input type="text" name="password" id="password" size="15"/>
+                      <input type="password" name="password" id="password" size="15"/>
                     </div>
                   </div>
             </div>
@@ -69,13 +69,13 @@ window.location.href = "login.php";
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                       <p class="input_text">確認新密碼</p>
-                      <input type="text" name="checkpassword" id="checkpassword" size="15"/>
+                      <input type="password" name="checkpassword" id="checkpassword" size="15"/>
                     </div>
                   </div>
             </div>
             </form>
             <div class="buttom_location">
-              <button class="button" onclick="formSubmit()">確認</button>
+              <button type="button" class="button" onclick="formSubmit()">確認</button>
             </div>
             <script>
               function formSubmit() {
@@ -89,6 +89,7 @@ window.location.href = "login.php";
                 var pas1 = document.getElementById("password").value;
                 var pas2 = document.getElementById("checkpassword").value;
                 if (pas1 != pas2) {
+                  checkpassword.value = "";
                   return false;
                 } else {
                   return true;
