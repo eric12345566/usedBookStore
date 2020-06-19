@@ -136,12 +136,19 @@
                       height: 8em;
                       border-radius: 50%;" class="card-img">
                   </div>
+
+                  <?php
+                    $result_inform = $db->execute("SELECT register_name,uuiversity,major FROM GeneralUser as G
+                    ,book_product as B WHERE G.username=B.username AND G.username=?;", array($result[0]["username"]));
+                   ?>
+
+
                   <div class="col-md-8">
                     <div class="card-body">
                       <div class="seller-title">賣家資訊</div>
-                      <div class="sellername"><?php echo $result[0]["username"]; ?></div>
+                      <div class="sellername"><?php echo $result_inform[0]["register_name"]; ?></div>
                       <div class="sellerDepartment">
-                        <small><?php echo $result[0]["uuiversity"]; ?>&nbsp;&nbsp;<?php echo $result[0]["major"]; ?></small>
+                        <small><?php echo $result_inform[0]["uuiversity"]; ?>&nbsp;&nbsp;<?php echo $result_inform[0]["major"]; ?></small>
                       </div>
                     </div>
                   </div>
