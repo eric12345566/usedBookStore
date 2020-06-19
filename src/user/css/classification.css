@@ -7,6 +7,22 @@
   margin: 0%;
 }
 
+.card-button{
+  border: none !important;
+}
+
+
+
+.box img{
+    width: 70%;
+    height: auto;
+}
+
+.imgsize {
+  width: 100 !important;
+}
+
+
 .navbar-nav .nav-link {
   color: black !important;
 }
@@ -75,11 +91,11 @@ section#cardsection {
 }
 
 .card {
-  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
-  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
-  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  border: 5px solid transparent !important;
+  height: 22em !important;
+  width: 15em !important;
+  box-shadow: 0px 3px 5px !important;
 }
-
 .card-book {
   font-size: 1.2em;
   font-weight: bolder;

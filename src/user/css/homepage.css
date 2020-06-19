@@ -40,10 +40,21 @@ section#cardsection3 {
 }
 
 .card {
+  border: 5px solid transparent;
+  height: 22em;
   width: 15em;
   box-shadow: 0px 3px 5px;
 }
 
+
+.box img{
+    width: 70%;
+    height: auto;
+}
+
+.card-button{
+  border: none;
+}
 .card-book {
   font-size: 1.2em;
   font-weight: bolder;

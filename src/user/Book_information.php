@@ -30,16 +30,49 @@
                 <li data-target="#demo" data-slide-to="2"></li>
               </ul>
 
+              <?php
+
+                function find_base64($product_no)
+                {
+                    require __DIR__ . '/../vendor/autoload.php';
+                    $db = Database::get();
+                    $photo_result = $db->execute("SELECT base64 FROM photo WHERE product_no=?", array($product_no)); //隨機取四本
+
+                    if ($db->getRowCount()!=0) {
+                        return $photo_result[0]["base64"];
+                    } else {
+                        return null;
+                    }
+                }
+
+                require __DIR__ . '/../vendor/autoload.php';
+                $db = Database::get();
+
+                $product_no=empty($_GET['product_no'])?'':$_GET['product_no'];
+                  if (empty($product_no)) {
+                      $product_no = null;
+                  }
+                //echo "系所： ".$keyword; //show出 關鍵字
+
+                $result = $db->execute("SELECT * FROM book_product WHERE product_no = ?;", array($product_no));
+                $count = $db->getRowCount();
+                //echo "$count";
+
+                if ($count == 0) {   //如果沒有搜尋結果
+                    echo "頁面發生錯誤";
+                    echo '<script type="text/javascript">alert("頁面錯誤！");</script>';
+                    echo '<script type="text/javascript">window.location.href="homepage.php"</script>';//重新導向
+                }
+
+
+               ?>
+
               <!-- The slideshow -->
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block w-100 h-55" src="./image/card1.jpg" width="700" height="450" />
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100 h-55" src="./image/card2.jpg" width="700" height="450" />
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100 h-55" src="./image/card3.jpg" width="700" height="450" />
+                  <?php
+                    echo '<img class="imgsize" class="card-img-top" src="data:image/png;base64,'.find_base64($result[0]["product_no"]).'" alt="Card image cap" >'
+                   ?>
                 </div>
               </div>
 
@@ -55,25 +88,7 @@
         </div>
 
 
-        <?php
-            require __DIR__ . '/../vendor/autoload.php';
-            $db = Database::get();
 
-            $product_no=empty($_GET['product_no'])?'':$_GET['product_no'];
-              if (empty($product_no)) {
-                  $product_no = null;
-              }
-            //echo "系所： ".$keyword; //show出 關鍵字
-
-            $result = $db->execute("SELECT * FROM book_product WHERE product_no = ?;", array($product_no));
-            $count = $db->getRowCount();
-            //echo "$count";
-
-            if ($count == 0) {   //如果沒有搜尋結果
-                echo "頁面發生錯誤";
-                echo '<script type="text/javascript">alert("頁面錯誤！");</script>';
-                echo '<script type="text/javascript">window.location.href="homepage.php"</script>';//重新導向
-            }?>
 
         <div class="col-md-4">
           <section id="imagesinformation">
