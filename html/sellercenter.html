@@ -5,7 +5,7 @@
 <head>
     <title>賣家中心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="./css/VIPcenter.css" />
+    <link rel="stylesheet" href="./css/sellercenter.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
@@ -13,29 +13,43 @@
 <body>
 
     <!--This is navbar-->
-    <nav id="main-nav" class="navbar navbar-expand-sm navbar-dark fixed-top">
-        <div id="myBar" class="container">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <h2 style="position: fixed; left: 3em; color: darkcyan; font-family: Microsoft JhengHei;">二手書網</h2>
-                </li>
-                <col class="nav-item">
-                <a href="#home-section" class="nav-link topNavbar active">首頁</a>
-                <col class="nav-item">
-                <a href="#explore-head-section" class="nav-link topNavbar">搜尋</a>
-                <col class="nav-item">
-                <a href="#author-head-section" class="nav-link topNavbar">分類</a>
-                <col class="nav-item">
-                <a href="#mission-head-section" class="nav-link topNavbar">賣書</a>
-                <col class="nav-item">
-                <a href="#mission-head-section" class="nav-link topNavbar">會員中心</a>
-                <col class="nav-item">
-                <img src="image/account.png" alt="Avatar" id="account">
-            </ul>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+          <h2 style="color: darkcyan; font-weight: bold; font-family: Microsoft JhengHei;">
+            二手書網
+          </h2>
         </div>
-    </nav>
+        <div class="col-md-2">
+          <nav id="main-nav" class="navbar navbar-expand-sm navbar-dark fixed-top">
+            <div id="myBar" class="container">
+              <ul class="navbar-nav ml-auto">
+                <col class="nav-item" />
+                <a href="#home-section" class="nav-link topNavbar active">首頁</a>
+                <col class="nav-item" />
+                <a href="#explore-head-section" class="nav-link topNavbar">搜尋</a>
+                <col class="nav-item" />
+                <a href="#author-head-section" class="nav-link topNavbar">分類</a>
+                <col class="nav-item" />
+                <a href="#mission-head-section" class="nav-link topNavbar">賣書</a>
+                <col class="nav-item" />
+                <a href="#mission-head-section" class="nav-link topNavbar">會員中心</a>
+                <col class="nav-item" />
+                <col class="nav-item" />
+                <img src="image/account.png" alt="Avatar" id="account" />
+                <col class="nav-item" />
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
 
-    <h3 id="Title">會員中心</h3>
+    <div class="row">
+        <div class="col-md-3">
+            <h3 id="Title">會員中心</h3>
+        </div>
+    </div>
+
     <div class="row" style="width: 80%; margin: 0 auto;">
         <div class="card col-md-2" id="card1">
             <div class="index">
@@ -60,7 +74,7 @@
             </div>
         </div>
 
-        <div class="card col-md-9" id="card2" style="margin-bottom: 5em; height: auto;">
+        <div class="card col-md-9" id="card2" style="margin-bottom: 5em; height: auto; margin-left: 3em;">
             <div class="row">
                 <span style="margin-left: 4em; font-family: Microsoft JhengHei;">
                     <h4>商品管理</h4>
@@ -74,7 +88,7 @@
                 <span style="margin-left: 4em; font-family: Microsoft JhengHei;">
                     <h5>上架中</h5>
                 </span>
-                <span style="margin: auto; margin-right: 5em;">
+                <span style="margin: auto; margin-right: 0em;">
                     <div class="search-container">
                         <input type="text" placeholder="Search.." id="search">
                         <input class="btn btn-primary" type="button" value="搜尋">
