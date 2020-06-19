@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href="./style/base.css">
   <link rel="stylesheet" href="./style/accounts.css">
-  <title>用戶管理 - Admin Dashboard</title>
+  <title>商品管理 - Admin Dashboard</title>
 </head>
 
 <body>
@@ -57,7 +57,7 @@
                 <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
                 <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
               </svg> 儀表板</a>
-            <a class="nav-link active" href="./accounts.php" role="tab">
+            <a class="nav-link" href="./accounts.php" role="tab">
               <svg class="bi bi-people" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.995-.944v-.002.002zM7.022 13h7.956a.274.274 0 0 0 .014-.002l.008-.002c-.002-.264-.167-1.03-.76-1.72C13.688 10.629 12.718 10 11 10c-1.717 0-2.687.63-3.24 1.276-.593.69-.759 1.457-.76 1.72a1.05 1.05 0 0 0 .022.004zm7.973.056v-.002.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10c-1.668.02-2.615.64-3.16 1.276C1.163 11.97 1 12.739 1 13h3c0-1.045.323-2.086.92-3zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
@@ -68,7 +68,7 @@
                 <path fill-rule="evenodd"
                   d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
               </svg> 訂單管理</a>
-            <a class="nav-link" href="./product.php" role="tab"> <svg class="bi bi-gift" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <a class="nav-link active" href="./product.php" role="tab"> <svg class="bi bi-gift" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M2 6v8.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V6h1v8.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V6h1zm8-5a1.5 1.5 0 0 0-1.5 1.5c0 .098.033.16.12.227.103.081.272.15.49.2A3.44 3.44 0 0 0 9.96 3h.015L10 2.999l.025.002h.014A2.569 2.569 0 0 0 10.293 3c.17-.006.387-.026.598-.073.217-.048.386-.118.49-.199.086-.066.119-.13.119-.227A1.5 1.5 0 0 0 10 1zm0 3h-.006a3.535 3.535 0 0 1-.326 0 4.435 4.435 0 0 1-.777-.097c-.283-.063-.614-.175-.885-.385A1.255 1.255 0 0 1 7.5 2.5a2.5 2.5 0 0 1 5 0c0 .454-.217.793-.506 1.017-.27.21-.602.322-.885.385a4.434 4.434 0 0 1-1.104.099H10z" />
                 <path fill-rule="evenodd"
@@ -92,7 +92,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12">
-                  <h2>用戶管理</h2>
+                  <h2>商品管理</h2>
                 </div>
               </div>
             </div>
@@ -101,92 +101,77 @@
           <div class="modal fade" id="account-info" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
               <div class="modal-content">
-                <form action="./API/accounts/accounts-update.php" method="post">
+                <form action="./API/product/product-update.php" method="post">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">查看/修改管理者帳號</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">查看/修改商品</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
                     <div class="form-group">
-                      <label>使用者帳號</label>
-                      <input type="text" class="form-control" id="info-username" disabled>
-                      <input type="hidden" name="username" class="form-control" id="info-username-post">
-                      <div class="invalid-feedback">帳號格式錯誤</div>
+                      <label>產品編號</label>
+                      <input type="text" class="form-control" id="info-pno" disabled>
+                      <input type="hidden" name="product_no" class="form-control" id="product_no">
                     </div>
                     <div class="form-group">
-                      <label>名稱</label>
-                      <input type="text" name="name" class="form-control" id="info-name">
+                      <label>書名</label>
+                      <input type="text" name="book_name" class="form-control" id="book_name">
                     </div>
                     <div class="form-group">
-                      <label>Email address</label>
-                      <input type="email" name="email" class="form-control" id="info-email" aria-describedby="emailHelp" required>
-                      <div class="invalid-feedback">電子郵件格式錯誤</div>
+                      <label>ISBN</label>
+                      <input type="text" name="ISBN" class="form-control" id="ISBN">
                     </div>
                     <div class="form-group">
-                      <label>密碼</label>
-                      <input type="password" name="password" class="form-control" id="info-password">
-                      <div class="invalid-feedback">密碼格式錯誤 - 4~50字元，至少一個特殊符號，至少一個大小寫、0~9數字</div>
+                      <label>出版商</label>
+                      <input type="text" name="publisher" class="form-control" id="publisher">
                     </div>
                     <div class="form-group">
-                      <label>生日</label>
-                      <input id="info-bdate" type="date" name="bdate">
+                      <label>出版時間</label>
+                      <input id="publish_date" type="date" name="publish_date">
                     </div>
                     <div class="form-group">
-                      <label>電話號碼</label>
-                      <input type="text" name="phonenumber" class="form-control" id="info-phonenumber" required>
+                      <label>價格</label>
+                      <input type="text" name="price" class="form-control" id="price">
                     </div>
                     <div class="form-group">
-                      <label for="exampleFormControlSelect1">性別</label>
-                      <select class="form-control" id="info-gender" name="gender">
-                        <option>M</option>
-                        <option>F</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">學號</label>
-                      <input type="text" name="stdId" class="form-control" id="info-stdId" required>
-                    </div>
-                    <div class="form-group">
-                      <label>大學</label>
-                      <input type="text" name="uiversity" class="form-control" id="info-uiversity" required>
-                    </div>
-                    <div class="form-group">
-                      <label>系所</label>
-                      <input type="text" name="major" class="form-control" id="info-major" required>
-                    </div>
-                    <div class="form-group">
-                      <label>學生證是否驗證</label>
-                      <select class="form-control" id="info-authen" name="stdauthen">
+                      <label>上架/下架</label>
+                      <select class="form-control" id="avialiable" name="avialiable">
                         <option>0</option>
                         <option>1</option>
                       </select>
                     </div>
                     <div class="form-group">
-                      <label>是否為賣家</label>
-                      <select class="form-control" id="info-sflag" name="sflag">
-                        <option>0</option>
-                        <option>1</option>
-                      </select>
+                      <label for="exampleInputPassword1">語言</label>
+                      <input type="text" name="b_language" class="form-control" id="b_language">
                     </div>
                     <div class="form-group">
-                      <label>地址</label>
-                      <input type="text" name="address" class="form-control" id="info-address">
+                      <label>外觀狀態</label>
+                      <input type="text" name="exterior" class="form-control" id="exterior">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">商家名</label>
-                      <input type="text" name="register_name" class="form-control" id="info-registername">
+                      <label>存量</label>
+                      <input type="text" name="stock" class="form-control" id="stock">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">負責人</label>
-                      <input type="text" name="man_in_charge" class="form-control" id="info-manincharge">
+                      <label>作者</label>
+                      <input type="text" name="author" class="form-control" id="author">
                     </div>
                     <div class="form-group">
-                      <label>審核管理員</label>
-                      <p id="info-checkadmin"></p>
+                      <label>簡介</label>
+                      <textarea class="form-control" id="introduce" name="introduce" rows="4"></textarea>
                     </div>
-                    <img id="info-userphoto"/>
+                    <div class="form-group">
+                      <label>賣家</label>
+                      <input type="text" class="form-control" id="username" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label>建立時間</label>
+                      <input type="text" class="form-control" id="set_time" disabled>
+                    </div>
+                    <div id="img-block">
+
+                    </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -204,18 +189,20 @@
                   <table class="table" id="myTable">
                     <thead class="thead-dark">
                       <tr>
-                        <th>帳號</th>
-                        <th>姓名</th>
-                        <th>大學</th>
-                        <th>學系</th>
-                        <th>是否通過驗證</th>
+                        <th>書籍編號</th>
+                        <th>書名</th>
+                        <th>ISBN</th>
+                        <th>價格</th>
+                        <th>賣家</th>
+                        <th>上架日期</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th>ericlion</th>
+                        <td>ericlion</td>
                         <td>施冠彰</td>
                         <td>逢甲大學</td>
+                        <td>正常</td>
                         <td>正常</td>
                         <td>正常</td>
                       </tr>
@@ -242,7 +229,7 @@
       var table = $('#myTable').DataTable({
         "processing": true,
         "serverSide": true,
-        "ajax": "./API/accounts/accounts-table.php"
+        "ajax": "./API/product/product-table.php"
       });
 
       $('#myTable tbody').on('click', 'tr', function() {
@@ -251,10 +238,10 @@
         $('#account-info').modal('show');
         $.ajax({
           type: 'GET',
-          url: './API/accounts/accounts-info.php',
+          url: './API/product/product-info.php',
           dataType: 'json',
           data: {
-            uid: data[0]
+            pid: data[0]
           },
           complete: function() {
             console.log("complete");
@@ -262,60 +249,46 @@
           success: function(msg) {
             console.log(msg);
 
-            // username
-            $('#info-username').val(msg[0].username);
-            $('#info-username-post').val(msg[0].username);
-
-            // Name
-            $('#info-name').val(msg[0].name);
-
-            //email
-            $('#info-email').val(msg[0].email);
-
-            //PASSWORD
-            // $('#info-password').val(msg[0].password);
-
-            //bdate
-            $('#info-bdate').val(msg[0].bdate);
-
-            //phonenumber
-            $('#info-phonenumber').val(msg[0].phonenumber);
-
-            //gender
-            $('#info-gender').val(msg[0].gender);
-
-            //學號
-            $('#info-stdId').val(msg[0].stdId);
-
-            //大學
-            $('#info-uiversity').val(msg[0].uuiversity);
-
-            //系所
-            $('#info-major').val(msg[0].major);
-
-            //學生證是否驗證
-            $('#info-authen').val(msg[0].std_authen);
-
-            //是否為賣家
-            $('#info-sflag').val(msg[0].s_flag);
-
-            //地址
-            $('#info-address').val(msg[0].address);
-
-            // 商家名
-            $('#info-registername').val(msg[0].register_name);
-
-            // 負責人
-            $('#info-manincharge').val(msg[0].man_in_charge);
-
-            // 審核管理員
-            $('#info-checkadmin').text(msg[0].Admin_name);
-
-            // 學生證
-            imgsrc = `data:image/jpeg;base64,${msg[0].stdId_img}`;
-            $('#info-userphoto').attr("src", imgsrc);
+            $('#info-pno').val(msg[0].product_no);
+            $('#product_no').val(msg[0].product_no);
+            $('#book_name').val(msg[0].book_name);
+            $('#ISBN').val(msg[0].ISBN);
+            $('#publisher').val(msg[0].publisher);
+            $('#publish_date').val(msg[0].publish_date);
+            $('#price').val(msg[0].price);
+            $('#avialiable').val(msg[0].avialiable);
+            $('#b_language').val(msg[0].b_language);
+            $('#exterior').val(msg[0].exterior);
+            $('#stock').val(msg[0].stock);
+            $('#author').val(msg[0].author);
+            $('#introduce').val(msg[0].introduce);
+            $('#username').val(msg[0].username);
+            $('#set_time').val(msg[0].set_time);
           },
           error: function(msg) {
+            console.log(msg);
+          }
+        });
+      });
+
+      $('#delete').click(function(){
+        $.ajax({
+          type: 'GET',
+          url: './API/product/product-delete.php',
+          dataType: 'json',
+          data: {
+            pid: $('#product_no').val()
+          },
+          complete: function() {
+            console.log("complete");
+          },
+          success: function(msg) {
+            console.log(msg);
+            location.reload();
+          },
+          error: function(msg) {
+            console.log("error");
+            alert("刪除失敗，請聯絡管理員");
             console.log(msg);
           }
         });
