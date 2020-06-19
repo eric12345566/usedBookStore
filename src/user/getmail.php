@@ -37,12 +37,12 @@
    $num = new randomtoken;
   $usermail = stripslashes(trim($_POST['email']));
 
-  $result = $db->execute("SELECT * FROM USERNAME WHERE email = ?", array($usermail));
+  $result = $db->execute("SELECT * FROM GeneralUser WHERE email = ?", array($usermail));
   if ($db->getRowCount()) {
       $token = $num->getrand_id();
       $token = sha1($token);
-      $db->execute("INSERT INTO UserEP(usermail, link_no, used) VALUE(?, ?, ?);", array($usermail, $token,0));
-      echo $token;
+      $db->execute("INSERT INTO UserEP(useremail, link_no, used) VALUE(?, ?, ?);", array($usermail, $token,0));
+      //echo $token;
       $link = "http://127.0.0.1/usedBookStore/src/user/vertify.php?"."token=$token";
       mb_internal_encoding("utf-8");
       $to= $usermail;

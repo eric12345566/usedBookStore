@@ -49,7 +49,8 @@
             }
           </script>
           <div class="forgot">
-            <button type="button" class="btn btn-link" style="font-size: 0.9em;">忘記密碼</button>
+            <button type="button" class="btn btn-link" style="font-size: 0.9em"
+            onclick="location.href='forget.php'">忘記密碼</button>
           </div>
         </div>
       </div>

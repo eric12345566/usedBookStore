@@ -2,13 +2,13 @@
   require __DIR__ . '/../vendor/autoload.php';
   session_start();
   $db = Database::get();
-  $password = $_POST["pass"];
-  $check = $_POST['checkpass'];
+  $password = $_POST["password"];
+  $check = $_POST['checkpassword'];
 
-  echo $_SESSION["token"]; //TODO token 驗證
+  //echo $_SESSION["token"]; //TODO token 驗證
   if (!strcmp($password, $check)) {  //比較密碼與確認密碼有無被取用
-      $result = $db->execute("UPDATE USERNAME SET password = ?
-      WHERE email = (SELECT usermail FROM UserEP WHERE link_no = ?) ;", array($password, $_SESSION["token"])); //修改密碼
+      $result = $db->execute("UPDATE GeneralUser SET password = ?
+      WHERE email = (SELECT useremail FROM UserEP WHERE link_no = ?) ;", array($password, $_SESSION["token"])); //修改密碼
       if ($db->getRowCount()) { //如果
           $result = $db->execute("UPDATE UserEP SET used = ? WHERE link_no = ?;", array(1, $_SESSION["token"]));   //使token 失效
           if ($db->getRowCount()) {
@@ -25,7 +25,7 @@
       }
   } else {
       echo '<script type="text/javascript">alert("還敢偷偷關Javascript？？？");</script>'; ?>
-    <script type="text/javascript">window.location.href="login.php"</script>; //重新導向至首頁
+
     <?php
   }
   ?>
