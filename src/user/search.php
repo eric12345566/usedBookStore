@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <title>搜尋</title>
     <meta charset="utf-8">
@@ -81,25 +82,44 @@
             echo "共有".$amount."筆資料！";
         } ?>
         <div class="row">
+
+
         <?php
+        function find_base64($product_no)
+        {
+            require __DIR__ . '/../vendor/autoload.php';
+            $db = Database::get();
+            $photo_result = $db->execute("SELECT base64 FROM photo WHERE product_no=?", array($product_no)); //隨機取四本
+
+            if ($db->getRowCount()!=0) {
+                return $photo_result[0]["base64"];
+            } else {
+                return null;
+            }
+        }
+
+
         for ($i=0 ; $i<$amount ; $i++) {
+            $link="'Book_information.php?product_no=".$result[$i]["product_no"]."'";
             echo '<div class="col-md-3" style="padding: 3em;">
-            <div class="card">
-              <img class="card-img-top" src="./image/card.jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="card-book">'.$result[$i]["book_name"].'</div>
-                <p class="card-writer">作者 ：'.$result[$i]["author"].'</p>
-                <p class="card-pay">價格: '.$result[$i]["price"].'</p>
-              </div>
+           <button type="button" class="card-button" onclick="location.href='.$link.'" style="border:none">
+          <div class="card">
+            <div class="box">
+            <img class="imgsize" class="card-img-top" src="data:image/png;base64,'.find_base64($result[$i]["product_no"]).'" alt="Card image cap" >
             </div>
-          </div>' ;
+            <div class="card-body">
+              <div class="card-book">'.$result[$i]["book_name"].'</div>
+              <p class="card-writer">作者 ：'.$result[$i]["author"].'</p>
+              <p class="card-pay">價格: '.$result[$i]["price"].'</p>
+            </div>
+          </div>
+           </button>
+        </div>' ;
         } ?>
       </div>
         <?php
     }
 ?>
-
-
 
 <!--This is buttonbar-->
 <section id="header">
