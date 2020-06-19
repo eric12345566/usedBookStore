@@ -27,6 +27,27 @@
   <!--輪轉照片-->
 </head>
 
+<?php
+  require __DIR__ . '/../vendor/autoload.php';
+  session_start();
+  $db = Database::get();
+  $result = $db->execute("SELECT * FROM book_product WHERE username=?", array($_SESSION['username']));
+  $count = $db->getRowCount(); //商品數量
+  function find_base64($product_no)
+  {
+      require __DIR__ . '/../vendor/autoload.php';
+      $db = Database::get();
+      $photo_result = $db->execute("SELECT base64 FROM photo WHERE product_no=?", array($product_no));
+
+      if ($db->getRowCount()!=0) {
+          return $photo_result[0]["base64"];
+      } else {
+          return null;
+      }
+  }
+ ?>
+
+
 <body>
   <!--This is navbar-->
   <div class="container-fluid">
@@ -131,32 +152,30 @@
             <div class="division">
               <div class="row">
                 <!-- 資料內容-->
-                <div class="col-md-6">
-                  <div class="card pcard" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">標題</h5>
-                      <p class="card-text pcontent">狀態：</p>
-                      <p class="card-text pcontent">上架日期：</p>
-                      <p class="card-text pcontent">價格：</p>
-                      <a href="#" class="btn btn-primary pbtn">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="card pcard" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">標題</h5>
-                      <p class="card-text pcontent">狀態：</p>
-                      <p class="card-text pcontent">上架日期：</p>
-                      <p class="card-text pcontent">價格：</p>
-                      <a href="#" class="btn btn-primary pbtn">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-                
-                
+                 <?php
+                 for ($i=0 ; $i<$count ; $i++) {
+                     $link="Book_information.php?product_no=".$result[$i]["product_no"]."";
+                     $status = "已售完或下架";
+                     if ($result[$i]["avialiable"]) {
+                         $status = "上架中";
+                     }
+                     echo '<div class="col-md-6">
+                       <div class="card pcard" style="width: 18rem;">
+                        <div class="box">
+                        <img class="imgsize" class="card-img-top" src="data:image/png;base64,'.find_base64($result[$i]["product_no"]).'" alt="Card image cap">
+                         <div class="card-body">
+                           <h5 class="card-title">'.$result[$i]["book_name"].'</h5>
+                           <p class="card-text pcontent">狀態：'.$status.'</p>
+                           <p class="card-text pcontent">上架日期：'.$result[$i]["set_time"].'</p>
+                           <p class="card-text pcontent">價格：'.$result[$i]["price"].'元</p>
+                           <a href="'.$link.'" class="btn btn-primary pbtn">Go somewhere</a>
+                         </div>
+                       </div>
+                       </div>
+                     </div>';
+                 }
+                  ?>
+
                 <!--下半右邊結束-->
               </div>
               <div class="buttom_location">

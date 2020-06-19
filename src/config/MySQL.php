@@ -5,7 +5,7 @@
     class MySQL
     {
         const ADDRESS = '127.0.0.1';
-        const USERNAME = "dbkid";
-        const PASSWORD = "V8Yb2ps8a4Hnka6R";
-        const DATABASE = "book4";
+        const USERNAME = "root";
+        const PASSWORD = "";
+        const DATABASE = "DataBase";
     }
