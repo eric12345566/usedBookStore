@@ -13,6 +13,11 @@
     font-weight: bolder;
     font-size: 2em;
 }
+
+.image {
+    width: 50%!important;
+}
+
 .Lab {
     color: black;
     font-size: 1.2em;
