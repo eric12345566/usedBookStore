@@ -3,7 +3,9 @@
   // 建立 Session
   session_start();
   $db = Database::get();
-  
+  if (!isset($_SESSION['username'])) {
+      header("Location: login.php");
+  }
   $result = $db->execute("SELECT * FROM generaluser WHERE username = ?;", array($_SESSION['username']));
    
 ?>
@@ -15,6 +17,7 @@
   <title>會員中心</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="./css/VIPcenter.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 </head>
@@ -75,8 +78,17 @@
         </div>
         <div class="row" style="line-height: 3em;">
           <a href="TransactionOrder.php" id="order">
-            <img src="image/list.png" style="width: 25px;">
+          <i
+              class="fas fa-chart-line"
+              style="color:gray; font-size: 1em;"
+            ></i>
             訂單查詢
+          </a>
+        </div>
+        <div class="row" style="line-height: 3em;">
+          <a href="logout.php" id="order">
+            <img src="image/account.png" style="width: 25px;">
+            登出
           </a>
         </div>
       </div>

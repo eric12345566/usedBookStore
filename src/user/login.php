@@ -1,5 +1,10 @@
 <!--body 大小不是左右填滿的-->
-
+<?php
+  session_start();
+  if (isset($_SESSION['username'])) {
+      header("Location: personinfo.php");
+  }
+?>
 <!DOCTYPE html>
 <html>
 
