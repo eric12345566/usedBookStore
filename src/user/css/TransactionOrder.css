@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*navbar 的 css*/
 *{
     font-family: Microsoft JhengHei;
@@ -130,3 +131,137 @@ section#header {
     color: #ffffff !important;
     font-family: Microsoft JhengHei;
 }
+=======
+/*navbar 的 css*/
+*{
+    font-family: Microsoft JhengHei;
+  }
+.navbar-nav .nav-link {
+    color: black !important;
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
+  
+#topImage {
+    width: 100%;
+    height: 25em;
+  }
+
+#account{
+    width: 3em;
+    border-radius: 50%;
+  }
+  
+.topNavbar:active {
+    text-decoration: underline;
+    background-color: gray;
+    color: #fafafa;
+  }
+
+h4{
+    font-weight: 900 !important;
+}
+#Orderlabel {
+    padding-top: 1.8em;
+}
+#Ordernumber {
+    padding-left: 0.5em;
+}
+select {
+    width: 10% !important;
+}
+
+.col-md-10 {
+    border-top-style: solid;
+    border-top-color: black;
+}
+
+.bookname {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.orderprice{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.orderquantity {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+#pricetext {
+    font-size: 1.3em; 
+    font-weight: bolder;
+    margin-top: 2em;
+}
+#price {
+    color: rgb(62, 116, 133);
+    margin-left: 0.5em;
+}
+.contenttext {
+    margin-top: 3em;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+.col-md-5{
+    margin-top: 5em;
+}
+#order_status {
+    margin-top: 1em;
+    font-size: 2em;
+    
+    color: cornflowerblue;
+}
+.button {
+    margin: 2em 2em 6em 0;
+    font-size: 1em !important;
+    border: none;
+    padding: 0.7em 1.8em;
+    text-align: center;
+    display: inline-block;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 5%;
+    text-decoration:none;
+  }
+
+
+.person {
+    font-weight: bolder;
+    font-size: 1.1em;
+}
+
+/*buttombar 的 css*/
+footer {
+    width: 100%;
+    height: 100px;
+    /* footer的高度一定要是固定值*/
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: #56445D;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+
+section#header {
+    background-color: #56445D;
+    color: #ffffff;
+    padding: 2em 2em 5em 2em;
+}
+
+.bottomtext {
+    font-family: Microsoft JhengHei;
+    font-weight: bolder;
+}
+
+.bottomText {
+    color: #ffffff !important;
+    font-family: Microsoft JhengHei;
+}
+>>>>>>> origin/註冊
