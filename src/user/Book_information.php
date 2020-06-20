@@ -71,7 +71,7 @@
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <?php
-                    echo '<img class="d-block w-100 h-55" class="card-img-top" src="data:image/png;base64,'.find_base64($result[0]["product_no"]).'" alt="Card image cap" >'
+                    echo '<img class="card-img-top image" src="data:image/png;base64,'.find_base64($result[0]["product_no"]).'" alt="Card image cap" >'
                    ?>
                 </div>
               </div>
