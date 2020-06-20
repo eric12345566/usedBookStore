@@ -52,7 +52,7 @@
                 >搜尋</a
               >
               <col class="nav-item" />
-              <a href="classification" class="nav-link topNavbar">分類</a>
+              <a href="classification.php" class="nav-link topNavbar">分類</a>
               <col class="nav-item" />
               <a href="seller_baseinformation.php" class="nav-link topNavbar"
                 >賣書</a
@@ -84,7 +84,7 @@
         <div class="card" id="card1">
           <div class="index">
             <div class="row">
-              <a href="seller_baseinformation.php" id="profile">
+              <a href="personinfo.php" id="profile">
                 <i class="fas fa-user" style="font-size: 1em;"></i>
                 賣家基本資料
               </a>
@@ -100,7 +100,7 @@
               </a>
             </div>
             <div class="row">
-              <a href="TransactionOrder.php" id="order">
+              <a href="infoOrder.php" id="order">
                 <i
                   class="fas fa-chart-line"
                   style="color:gray; font-size: 1em;"
@@ -197,17 +197,16 @@
                   </section>
                 </div>
                 <!--輪轉圖結束 -->
-                <form method="post" action="create_commodity-api.php" enctype = "multipart/form-data">
                 <div class="col-sm-5">
                   <!--右邊區塊-->
                     <div class="form-group">
+                    <form method="post" action="create_commodity-api.php" enctype = "multipart/form-data">
                       <input type="file" class="form-control-file" id="exampleFormControlFile1">
                     </div>
                   <p
                     id="text1"
                     style="font-size: 0.9em; margin-left: 3.2em; margin-top: 2em;"
                   >
-                    已上傳 (最多三張)
                   </p>
                 </div>
               </div>
