@@ -44,29 +44,35 @@
     </nav>
 
     <div class="row">
-        <h3 id="Title">賣家中心</h3>
+        <h3 id="Title">會員中心</h3>
     </div>
     <div class="row" style="width: 90%; margin: 0 auto;">
         <div class="card col-md-2" id="card1">
             <div class="index">
               <div class="row" style="line-height: 3em;">
-                <a href="seller_baseinformation.php" id="profile">
+                <a href="personinfo.php" id="profile">
                   <img src="image/profile.png" style="width: 25px;">
-                  賣家基本資料
+                  個人基本資料
                 </a>
               </div>
               <div class="row" style="line-height: 3em;">
-                <a href="seller_baseinformation_product.php" id="change">
+                <a href="repassword.php" id="change">
                   <img src="image/security.png" style="width: 25px;">
-                    商品管理
+                    帳號密碼修改
                 </a>
               </div>
               <div class="row" style="line-height: 3em;">
-                <a href="infoOrder.php" id="order">
+                <a href="infoOrder-person.php" id="order">
                   <img src="image/list.png" style="width: 25px;">
                   訂單查詢
                 </a>
               </div>
+              <div class="row" style="line-height: 3em;">
+                <a href="logout.php" id="order">
+                    <img src="image/account.png" style="width: 25px;">
+                    登出
+                </a>
+                </div>
             </div>
           </div>
 
@@ -86,7 +92,7 @@
             </div>
             <hr>
             <?php $price = 0;
-            $sname = $db->execute("SELECT * FROM p_order WHERE s_username = ?;", array($_SESSION['username']));
+            $sname = $db->execute("SELECT * FROM p_order WHERE p_username = ?;", array($_SESSION['username']));
             for($i = 0 ; $i < $db->getRowCount() ; $i++) {
                 $result = $db->execute("SELECT * FROM items WHERE order_no = ?;", array($sname[$i]['order_no']));
                 for($j = 0 ; $j < $db->getRowCount() ; $j++) { 

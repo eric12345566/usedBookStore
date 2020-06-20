@@ -51,9 +51,9 @@
                     $repeat_name = $db->execute("SELECT * FROM generaluser WHERE username = ? ;", array($username));
                    if($db->getRowCount() == 0) {
                     $hash_password = password_hash($password, PASSWORD_DEFAULT,['cost' => 11]);
-                    $result = $db->execute("INSERT INTO generaluser (username, email, password, name, phonenumber, gender, bdate, university, major, stdId ,stdId_img) VALUES ( ?,?,?,?,?,?,?,?,?,?,?)",array($username,$email,$hash_password,$name,$phonenumber,$gender,$bdate,$university,$major,$stdId,$fileContents));
+                    $result = $db->execute("INSERT INTO generaluser (username, email, password, name, phonenumber, gender, bdate, uuiversity, major, stdId ,stdId_img) VALUES ( ?,?,?,?,?,?,?,?,?,?,?)",array($username,$email,$hash_password,$name,$phonenumber,$gender,$bdate,$university,$major,$stdId,$fileContents));
                    if($db->getRowCount()) {
-                      echo "<script>alert('註冊成功'); location.href = 'http://localhost/eric12345566/src/user/login.php';</script>";
+                      echo "<script>alert('註冊成功'); location.href = 'login.php';</script>";
                    } else {
                       echo "註冊失敗";
                       echo $db->getErrorMessage();

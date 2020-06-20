@@ -87,7 +87,7 @@
           </a>
         </div>
         <div class="row">
-          <a href="TransactionOrder.php" id="order">
+          <a href="infoOrder-person.php" id="order">
             <i
               class="fas fa-chart-line"
               style="color:gray; font-size: 1em;"

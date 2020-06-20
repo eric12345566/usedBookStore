@@ -25,6 +25,7 @@
   $isError = false;
   $error_msg = "000"; // 1: adminName error, 2: email error, 3: password error
 
+
   $db = Database::get();
   if ($isError) {
       header("Location: ../../accounts.php?errorupdatemsg=" . $error_msg);
@@ -33,7 +34,8 @@
       if ($password == "") {
           $result =  $db->execute("UPDATE GeneralUser SET name=?, bdate=?, phonenumber=?, gender=?, email=?, stdId=?, uuiversity=?, major=?, std_authen=?, s_flag=?, address=?, register_name=?, man_in_charge=? WHERE username=?", array($name, $bdate, $phonenumber, $gender, $email, $stdId, $uiversity, $major, $stdauthen, $sflag, $address, $register_name, $man_in_charge, $userName));
       } else {
-          $result =  $db->execute("UPDATE GeneralUser SET name=?, password=?, bdate=?, phonenumber=?, gender=?, email=?, stdId=?, uuiversity=?, major=?, std_authen=?, s_flag=?, address=?, register_name=?, man_in_charge=? WHERE username=?", array($name, $password, $bdate, $phonenumber, $gender, $email, $stdId, $uiversity, $major, $stdauthen, $sflag, $address, $register_name, $man_in_charge, $userName));
+        $hash_password = password_hash($password, PASSWORD_DEFAULT,['cost' => 11]);
+          $result =  $db->execute("UPDATE GeneralUser SET name=?, password=?, bdate=?, phonenumber=?, gender=?, email=?, stdId=?, uuiversity=?, major=?, std_authen=?, s_flag=?, address=?, register_name=?, man_in_charge=? WHERE username=?", array($name, $hash_password, $bdate, $phonenumber, $gender, $email, $stdId, $uiversity, $major, $stdauthen, $sflag, $address, $register_name, $man_in_charge, $userName));
       }
 
       if ($db->getRowCount()) {
