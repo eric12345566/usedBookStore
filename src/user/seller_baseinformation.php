@@ -73,7 +73,7 @@
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-3">
-        <h3 id="Title">會員中心</h3>
+        <h3 id="Title">賣家中心</h3>
       </div>
     </div>
 
@@ -91,7 +91,7 @@
             </div>
 
             <div class="row">
-              <a href="sellercenter.php" id="change">
+              <a href="seller_baseinformation_product.php" id="change">
                 <i
                   class="fas fa-shield-alt"
                   style="color:lightblue; font-size: 1em;"

@@ -95,6 +95,12 @@
             訂單查詢
           </a>
         </div>
+        <div class="row" style="line-height: 3em;">
+          <a href="logout.php" id="order">
+            <img src="image/account.png" style="width: 25px;">
+            登出
+          </a>
+        </div>
       </div>
     </div>
 

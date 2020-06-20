@@ -19,11 +19,12 @@
   $price = $_POST['price'];
   $publisher = $_POST['publisher'];
 
-  $result = $db->execute("INSERT INTO book_product (product_no,book_name,ISBN,publisher,avialiable,price,b_language,publish_date,exterior,stock,author,introduce,username,set_time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-            ,array(15,$book_name,$ISBN,$publisher,1,$price,$b_language,$publish_date,$exterior,$stock,$author,$introduce,$_SESSION['username'],NULL));
+  $result = $db->execute("INSERT INTO book_product (book_name,ISBN,publisher,avialiable,price,b_language,publish_date,exterior,stock,author,introduce,username,set_time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"
+            ,array($book_name,$ISBN,$publisher,1,$price,$b_language,$publish_date,$exterior,$stock,$author,$introduce,$_SESSION['username'],NULL));
   
   if($db->getRowCount()) {
-    echo "新增書本商品成功"; 
+    echo "新增書本商品成功";
+    header("Location: seller_baseinformation_product.php");
   } else {
     echo $db->getErrorMessage();  
   }

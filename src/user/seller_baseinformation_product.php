@@ -112,7 +112,7 @@
             </div>
 
             <div class="row">
-              <a href="sellercenter.php" id="change">
+              <a href="seller_baseinformation_product.php" id="change">
                 <i
                   class="fas fa-shield-alt"
                   style="color:lightblue; font-size: 1em;"
@@ -168,7 +168,7 @@
                            <p class="card-text pcontent">狀態：'.$status.'</p>
                            <p class="card-text pcontent">上架日期：'.$result[$i]["set_time"].'</p>
                            <p class="card-text pcontent">價格：'.$result[$i]["price"].'元</p>
-                           <a href="'.$link.'" class="btn btn-primary pbtn">Go somewhere</a>
+                           <a href="'.$link.'" class="btn btn-primary pbtn">書籍詳細</a>
                          </div>
                        </div>
                        </div>
@@ -178,7 +178,7 @@
 
                 <!--下半右邊結束-->
               </div>
-              <div class="buttom_location">
+              <!-- <div class="buttom_location">
                 <button
                     type="submit"
                     class="btn btn-light"
@@ -195,7 +195,7 @@
                   >
                     取消
                   </button>
-              </div>
+              </div> -->
 
             </div>
             <!--下半結束-->
