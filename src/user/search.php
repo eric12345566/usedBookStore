@@ -59,7 +59,8 @@
     $count = $db->execute("SELECT count(*) as C FROM book_product ".$where); //紀錄搜尋總數
     $amount = $count[0]["C"];
     if ($amount == 0) {   //如果沒有搜尋結果
-        echo "沒有搜尋結果 請輸入關鍵字搜尋";
+        echo "沒有搜尋結果 請輸入關鍵字搜尋!";
+        echo "拜託給我看一下啦";
     } else {
         $page_cnt = ceil($amount/$page_size);//紀錄頁面有幾個
         $page_num = empty($_GET['page'])?1:$_GET['page'];
