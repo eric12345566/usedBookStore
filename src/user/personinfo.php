@@ -153,7 +153,7 @@
   <!--This is button-->
   <div id="store" style="margin-bottom: 5em;">
     <button type="submit" class="btn btn-success button1">儲存更改</button>
-    <button type="button" class="btn btn-secondary button1" onclick="javascript:location.href='http://localhost/eric12345566/src/user/homepage.php'">取消</button>
+    <button type="button" class="btn btn-secondary button1" onclick="javascript:location.href='homepage.php'">取消</button>
   </div>
 </form>
   
