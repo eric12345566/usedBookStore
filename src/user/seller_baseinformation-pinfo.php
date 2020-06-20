@@ -1,4 +1,20 @@
+<?php 
+  require __DIR__ . '/../vendor/autoload.php';
+  // 建立 Session
+  session_start();
+  $db = Database::get();
+  if (!isset($_SESSION['username'])) {
+      header("Location: login.php");
+  }
 
+  $pid = $_GET['pid'];
+  $result = $db->execute("SELECT * FROM book_product WHERE product_no = ?;", array($pid));
+  if($db->getRowCount() == 0){
+    echo "出事了阿貝";
+  }
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -228,6 +244,7 @@
                     class="form-control form-control-sm"
                     id="exampleInputbook_name"
                     aria-describedby="book_nameHelp"
+                    value="<?php echo $result[0]['book_name']; ?>"
                   />
                   </div>
                   
@@ -240,6 +257,7 @@
                     class="form-control form-control-sm"
                     id="exampleInputauthor"
                     aria-describedby="authorHelp"
+                    value="<?php echo $result[0]['author']; ?>"
                   />
                   </div>
                   
@@ -252,6 +270,7 @@
                     class="form-control form-control-sm"
                     id="exampleInputISBN"
                     aria-describedby="ISBNHelp"
+                    value="<?php echo $result[0]['ISBN']; ?>"
                   />
                   </div>
                   
@@ -265,6 +284,7 @@
                         type="date"
                         value="2011-08-19"
                         id="exampleInputpublish_date"
+                        value="<?php echo $result[0]['publish_date']; ?>"
                       />
                     </div>
                   </div>
@@ -277,6 +297,7 @@
                     class="form-control form-control-sm"
                     id="exampleInputpublisher"
                     aria-describedby="publisherHelp"
+                    value="<?php echo $result[0]['publisher']; ?>"
                   />
                   </div>
                   
@@ -289,6 +310,7 @@
                     class="form-control form-control-sm"
                     id="exampleInputlanguage"
                     aria-describedby="languageHelp"
+                    value="<?php echo $result[0]['b_language']; ?>"
                   />
                   </div>
                   
@@ -322,6 +344,7 @@
                     class="form-control form-control-sm"
                     id="exampleInputpublisher"
                     aria-describedby="publisherHelp"
+                    value="<?php echo $result[0]['stock']; ?>"
                   />
                   </div>
                   
@@ -338,7 +361,7 @@
                       id="exampleFormControlTextarea1"
                       rows="9"
                       placeholder="請輸入文字..."
-                    ></textarea>
+                    ><?php echo $result[0]['exterior']; ?></textarea>
                   </div>
 
                   <div class="form-group">
@@ -349,7 +372,7 @@
                       id="exampleFormControlTextarea2"
                       rows="9"
                       placeholder="請輸入文字..."
-                    ></textarea>
+                    ><?php echo $result[0]['introduce']; ?></textarea>
                   </div>
 
                   <div id="price_text" style="margin-left: 3em;margin-top: 4.7em;">
@@ -360,6 +383,7 @@
                       class="form-control form-control-sm"
                       id="exampleInputpublisher"
                       aria-describedby="publisherHelp"
+                      value="<?php echo $result[0]['price']; ?>"
                     />
                   </div>
                   
