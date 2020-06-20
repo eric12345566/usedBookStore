@@ -197,17 +197,18 @@
                   </section>
                 </div>
                 <!--輪轉圖結束 -->
-                <form method="post" action="create_commodity-api.php" enctype = "multipart/form-data">
+          
                 <div class="col-sm-5">
                   <!--右邊區塊-->
                     <div class="form-group">
-                      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <form method="post" action="create_commodity-api.php" enctype = "multipart/form-data">
+                      <input type="file" name="book_img" class="form-control-file" id="exampleFormControlFile1">
                     </div>
                   <p
                     id="text1"
                     style="font-size: 0.9em; margin-left: 3.2em; margin-top: 2em;"
                   >
-                    已上傳 (最多三張)
+              
                   </p>
                 </div>
               </div>
