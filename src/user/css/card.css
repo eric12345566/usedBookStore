@@ -1,0 +1,33 @@
+section#cardsection {
+    padding-top: 10em;
+    padding-left: 3em;
+}
+.card {
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+}
+.card-book {
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: black;
+}
+.card-writer {
+    font-size: 1.05em;
+}
+
+.card-pay {
+    font-size: 1em;
+    color: cornflowerblue;
+}
+.label{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.lookmore {
+    margin-left: 38.1em;
+}
+.button {
+    border: none;
+    background-color: #ffffff;
+}

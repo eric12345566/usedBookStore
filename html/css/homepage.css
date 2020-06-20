@@ -1,0 +1,107 @@
+/*navbar 的 css*/
+.navbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin: 0%;
+}
+
+.navbar-nav .nav-link {
+  color: black !important;
+}
+
+.navbar-brand {
+  color: black !important;
+}
+
+#topImage {
+  width: 100%;
+  height: 25em;
+}
+
+#account {
+  width: 4em;
+  border-radius: 50%;
+}
+
+.topNavbar:active {
+  text-decoration: none;
+  background-color: gray;
+  color: #fafafa;
+}
+
+
+/*card 的 css*/
+section#cardsection1,
+section#cardsection2,
+section#cardsection3 {
+  padding: 50px;
+}
+
+.card {
+  width: 15em;
+  box-shadow: 0px 3px 5px;
+}
+
+.card-book {
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: black;
+}
+
+.card-writer {
+  font-size: 1.05em;
+}
+
+.card-pay {
+  font-size: 1em;
+  color: cornflowerblue;
+}
+
+.label {
+  font-size: 1.5em;
+  font-weight: bolder;
+  font-family: Microsoft JhengHei;
+  padding-left: 4em;
+}
+
+.btn {
+  position: absolute;
+  right: 5em;
+}
+
+/*buttombar 的 css*/
+footer {
+  width: 100%;
+  height: 100px;
+  /* footer的高度一定要是固定值*/
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background: #56445D;
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+}
+
+section#header {
+  background-color: #56445D;
+  color: #ffffff;
+  padding: 2em 2em 5em 2em;
+}
+
+.bottomtext {
+  font-family: Microsoft JhengHei;
+  font-weight: bolder;
+}
+
+.bottomText {
+  color: #ffffff !important;
+  font-family: Microsoft JhengHei;
+}

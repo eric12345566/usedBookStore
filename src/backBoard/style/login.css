@@ -1,0 +1,21 @@
+section#login {
+  margin-top: 20vh;
+}
+
+.card-body {
+  padding: 3.5em 3em;
+}
+
+.card {
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.24);
+  border: none;
+}
+
+.title {
+  text-align: center;
+  font-size: 3em;
+  font-weight: lighter;
+  margin-bottom: 1em;
+}
