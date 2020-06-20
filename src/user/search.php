@@ -54,7 +54,7 @@
       } else {
           $where = 'where book_name like "%'.'nope'.'%" ';
       }
-    echo "關鍵字： ".$keyword; //show出 關鍵字
+    echo "您輸入的關鍵字： ".$keyword; //show出 關鍵字
     $page_size = 5;
     $count = $db->execute("SELECT count(*) as C FROM book_product ".$where); //紀錄搜尋總數
     $amount = $count[0]["C"];
