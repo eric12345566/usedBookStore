@@ -1,4 +1,4 @@
-<?php 
+<?php
   require __DIR__ . '/../vendor/autoload.php';
   // 建立 Session
   session_start();
@@ -9,8 +9,21 @@
 
   $pid = $_GET['pid'];
   $result = $db->execute("SELECT * FROM book_product WHERE product_no = ?;", array($pid));
-  if($db->getRowCount() == 0){
-    echo "出事了阿貝";
+  if ($db->getRowCount() == 0) {
+      echo "出事了阿貝";
+  }
+
+  function find_base64($product_no)
+  {
+      require __DIR__ . '/../vendor/autoload.php';
+      $db = Database::get();
+      $photo_result = $db->execute("SELECT base64 FROM photo WHERE product_no=?", array($product_no)); //隨機取四本
+
+      if ($db->getRowCount()!=0) {
+          return $photo_result[0]["base64"];
+      } else {
+          return null;
+      }
   }
 
 
@@ -169,28 +182,9 @@
                       <div class="carousel-inner">
                         <!--輪轉照片-->
                         <div class="carousel-item active">
-                          <img
-                            class="d-block w-100 h-55"
-                            src="./image/card1.jpg"
-                            width="200"
-                            height="280"
-                          />
-                        </div>
-                        <div class="carousel-item">
-                          <img
-                            class="d-block w-100 h-55"
-                            src="./image/card2.jpg"
-                            width="200"
-                            height="280"
-                          />
-                        </div>
-                        <div class="carousel-item">
-                          <img
-                            class="d-block w-100 h-55"
-                            src="./image/card3.jpg"
-                            width="200"
-                            height="280"
-                          />
+                          <?php
+                            echo '<img class="card-img-top image" src="data:image/png;base64,'.find_base64($result[0]["product_no"]).'" alt="Card image cap" >'
+                           ?>
                         </div>
                       </div>
 
@@ -247,7 +241,7 @@
                     value="<?php echo $result[0]['book_name']; ?>"
                   />
                   </div>
-                  
+
 
                   <p class="input_text" for="exampleInputauthor">作者</p>
                   <div class="col-sm-10">
@@ -260,7 +254,7 @@
                     value="<?php echo $result[0]['author']; ?>"
                   />
                   </div>
-                  
+
 
                   <p class="input_text" for="exampleInputISBN">ISBN</p>
                   <div class="col-sm-10">
@@ -273,7 +267,7 @@
                     value="<?php echo $result[0]['ISBN']; ?>"
                   />
                   </div>
-                  
+
 
                   <p class="input_text" style="margin-right: 2em;">出版日期</p>
                   <div class="form-group row">
@@ -300,7 +294,7 @@
                     value="<?php echo $result[0]['publisher']; ?>"
                   />
                   </div>
-                  
+
 
                   <p class="input_text" for="exampleInputlanguage">語言</p>
                   <div class="col-sm-10">
@@ -313,7 +307,7 @@
                     value="<?php echo $result[0]['b_language']; ?>"
                   />
                   </div>
-                  
+
 
                   <p class="input_text">書籍分類</p>
                   <div class="col-sm-10">
@@ -335,7 +329,7 @@
                         <option>中文系</option>
                       </select>
                   </div>
-                  
+
                   <p class="input_text" for="exampleInputpublisher">庫存量</p>
                   <div class="col-sm-10">
                     <input
@@ -347,7 +341,7 @@
                     value="<?php echo $result[0]['stock']; ?>"
                   />
                   </div>
-                  
+
 
                 </div>
                 <!--下半左邊結束-->
@@ -386,7 +380,7 @@
                       value="<?php echo $result[0]['price']; ?>"
                     />
                   </div>
-                  
+
                 </div>
                 <!--下半右邊結束-->
               </div>

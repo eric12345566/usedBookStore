@@ -43,7 +43,7 @@
       $token = sha1($token);
       $db->execute("INSERT INTO UserEP(useremail, link_no, used) VALUE(?, ?, ?);", array($usermail, $token,0));
       //echo $token;
-      $link = "http://127.0.0.1/ub/src/user/vertify.php?"."token=$token";
+      $link = "http://127.0.0.1/usedBookStore/src/user/vertify.php?"."token=$token";
       mb_internal_encoding("utf-8");
       $to= $usermail;
       $subject=mb_encode_mimeheader("你不得不承認這是一個忘記密碼的信", "utf-8");

@@ -160,6 +160,7 @@
                  <?php
                  for ($i=0 ; $i<$count ; $i++) {
                      $link="Book_information.php?product_no=".$result[$i]["product_no"]."";
+                     $lin2="seller_baseinformation-pinfo.php?pid=".$result[$i]["product_no"]."";
                      $status = "已售完或下架";
                      if ($result[$i]["avialiable"]) {
                          $status = "上架中";
@@ -174,6 +175,7 @@
                            <p class="card-text pcontent">上架日期：'.$result[$i]["set_time"].'</p>
                            <p class="card-text pcontent">價格：'.$result[$i]["price"].'元</p>
                            <a href="'.$link.'" class="btn btn-primary pbtn">書籍詳細</a>
+                           <a href="'.$lin2.'" class="btn btn-primary pbtn">修改資料</a>
                          </div>
                        </div>
                        </div>

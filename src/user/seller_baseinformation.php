@@ -52,7 +52,7 @@
                 >搜尋</a
               >
               <col class="nav-item" />
-              <a href="classification" class="nav-link topNavbar">分類</a>
+              <a href="classification.php" class="nav-link topNavbar">分類</a>
               <col class="nav-item" />
               <a href="seller_baseinformation.php" class="nav-link topNavbar"
                 >賣書</a
@@ -197,7 +197,7 @@
                   </section>
                 </div>
                 <!--輪轉圖結束 -->
-          
+
                 <div class="col-sm-5">
                   <!--右邊區塊-->
                     <div class="form-group">
@@ -208,7 +208,7 @@
                     id="text1"
                     style="font-size: 0.9em; margin-left: 3.2em; margin-top: 2em;"
                   >
-              
+
                   </p>
                 </div>
               </div>
@@ -232,7 +232,7 @@
                     aria-describedby="book_nameHelp"
                   />
                   </div>
-                  
+
 
                   <p class="input_text" for="exampleInputauthor">作者</p>
                   <div class="col-sm-10">
@@ -244,7 +244,7 @@
                     aria-describedby="authorHelp"
                   />
                   </div>
-                  
+
 
                   <p class="input_text" for="exampleInputISBN">ISBN</p>
                   <div class="col-sm-10">
@@ -256,7 +256,7 @@
                     aria-describedby="ISBNHelp"
                   />
                   </div>
-                  
+
 
                   <p class="input_text" style="margin-right: 2em;">出版日期</p>
                   <div class="form-group row">
@@ -281,7 +281,7 @@
                     aria-describedby="publisherHelp"
                   />
                   </div>
-                  
+
 
                   <p class="input_text" for="exampleInputlanguage">語言</p>
                   <div class="col-sm-10">
@@ -293,7 +293,7 @@
                     aria-describedby="languageHelp"
                   />
                   </div>
-                  
+
 
                   <p class="input_text">書籍分類</p>
                   <div class="col-sm-10">
@@ -315,7 +315,7 @@
                         <option>中文系</option>
                       </select>
                   </div>
-                  
+
                   <p class="input_text" for="exampleInputpublisher">庫存量</p>
                   <div class="col-sm-10">
                     <input
@@ -326,7 +326,7 @@
                     aria-describedby="publisherHelp"
                   />
                   </div>
-                  
+
 
                 </div>
                 <!--下半左邊結束-->
@@ -364,7 +364,7 @@
                       aria-describedby="publisherHelp"
                     />
                   </div>
-                  
+
                 </div>
                 <!--下半右邊結束-->
               </div>
