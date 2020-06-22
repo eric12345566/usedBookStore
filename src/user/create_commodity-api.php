@@ -41,6 +41,7 @@
             ,array($book_name,$ISBN,$publisher,1,$price,$b_language,$publish_date,$exterior,$stock,$author,$introduce,$_SESSION['username'],date("Y/m/d")));
     $pno = $db->getLastId();
     $result1 = $db->execute("INSERT INTO photo (product_no,base64) VALUES(?,?)",array($pno,$fileContents));
+    $result2 = $db->execute("INSERT INTO Classify_tag (class_name,product_no) VALUES(?,?)",array($class_name,$pno));
 
 
   if($db->getRowCount()) {
