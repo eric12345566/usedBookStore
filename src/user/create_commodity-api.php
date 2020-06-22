@@ -19,10 +19,6 @@
   $price = $_POST['price'];
   $publisher = $_POST['publisher'];
 
-<<<<<<< HEAD
-  $result = $db->execute("INSERT INTO book_product (book_name,ISBN,publisher,avialiable,price,b_language,publish_date,exterior,stock,author,introduce,username,set_time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"
-            ,array($book_name,$ISBN,$publisher,1,$price,$b_language,$publish_date,$exterior,$stock,$author,$introduce,$_SESSION['username'],NULL));
-=======
   if ( $_FILES["book_img"]["size"] > 0  &&  $_FILES["book_img"]["size"] < 10000000){
     //開啟圖片檔
     $file = fopen($_FILES["book_img"]["tmp_name"], "rb");
@@ -40,7 +36,6 @@
   $result1 = $db->execute("INSERT INTO photo (product_no,photo_no,base64) VALUES(?,?,?)",array(10,1,$filecontents)) ;
   $result = $db->execute("INSERT INTO book_product (product_no,book_name,ISBN,publisher,avialiable,price,b_language,publish_date,exterior,stock,author,introduce,username,set_time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
             ,array(16,$book_name,$ISBN,$publisher,1,$price,$b_language,$publish_date,$exterior,$stock,$author,$introduce,$_SESSION['username'],NULL));
->>>>>>> origin/註冊
   
   if($db->getRowCount()) {
     echo "新增書本商品成功";
