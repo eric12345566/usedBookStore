@@ -18,30 +18,36 @@
   $introduce = $_POST['introduce'];
   $price = $_POST['price'];
   $publisher = $_POST['publisher'];
+  $nowDatetime = date("Y-m-d H:s:i");
+  $nowDatetimeStr = strtotime($nowDatetime );
 
-  if ( $_FILES["book_img"]["size"] > 0  &&  $_FILES["book_img"]["size"] < 10000000){
+  if ($_FILES["book_img"]["size"] > 0){
     //開啟圖片檔
-    $file = fopen($_FILES["book_img"]["tmp_name"], "rb");
+    $files = fopen($_FILES["book_img"]["tmp_name"], "rb");
     // 讀入圖片檔資料
-    $fileContents = fread($file, filesize($_FILES["book_img"]["tmp_name"]));
+    $fileContent = fread($files, filesize($_FILES["book_img"]["tmp_name"]));
     //關閉圖片檔
-    fclose($file);
+    fclose($files);
     // 圖片檔案資料編碼
-    $fileContents = base64_encode($fileContents);
+    $fileContents = base64_encode($fileContent);
     } else {
       echo "<script>alert('警告: 檔案過大，無法儲存'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
       exit;
     }
-    
-  $result1 = $db->execute("INSERT INTO photo (product_no,photo_no,base64) VALUES(?,?,?)",array(10,1,$filecontents)) ;
-  $result = $db->execute("INSERT INTO book_product (product_no,book_name,ISBN,publisher,avialiable,price,b_language,publish_date,exterior,stock,author,introduce,username,set_time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-            ,array(16,$book_name,$ISBN,$publisher,1,$price,$b_language,$publish_date,$exterior,$stock,$author,$introduce,$_SESSION['username'],NULL));
+
+    //TODO 在完成訂單的時侯，取得product_id，放回photo的product_no
+    $result1 = $db->execute("INSERT INTO photo (product_no,base64) VALUES(?,?)",array(11,$fileContents)) ;
+    $result = $db->execute("INSERT INTO book_product (book_name,ISBN,publisher,avialiable,price,b_language,publish_date,exterior,stock,author,introduce,username,set_time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"
+            ,array($book_name,$ISBN,$publisher,1,$price,$b_language,$publish_date,$exterior,$stock,$author,$introduce,$_SESSION['username'],date("Y/m/d")));
   
   if($db->getRowCount()) {
-    echo "新增書本商品成功";
-    header("Location: seller_baseinformation_product.php");
+    echo '<script type="text/javascript">alert("新增書本商品成功");</script>'; ?>
+    <script type="text/javascript">window.location.href="create_commodity.php"</script>; //重新導向
+    <?php 
   } else {
-    echo $db->getErrorMessage();  
+    echo '<script type="text/javascript">alert("新增書本商品失敗");</script>'; ?>
+    <script type="text/javascript">window.location.href="create_commodity.php"</script>; //重新導向
+    <?php   
   }
 
 
