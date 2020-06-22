@@ -41,9 +41,13 @@
             ,array($book_name,$ISBN,$publisher,1,$price,$b_language,$publish_date,$exterior,$stock,$author,$introduce,$_SESSION['username'],date("Y/m/d")));
   
   if($db->getRowCount()) {
-    echo "新增書本商品成功"; 
+    echo '<script type="text/javascript">alert("新增書本商品成功");</script>'; ?>
+    <script type="text/javascript">window.location.href="create_commodity.php"</script>; //重新導向
+    <?php 
   } else {
-    echo $db->getErrorMessage();  
+    echo '<script type="text/javascript">alert("新增書本商品失敗");</script>'; ?>
+    <script type="text/javascript">window.location.href="create_commodity.php"</script>; //重新導向
+    <?php   
   }
 
 
