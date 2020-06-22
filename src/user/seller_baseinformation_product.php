@@ -152,7 +152,7 @@
             <div class="division">
               <div class="row" >
                   <div class="col-md-3 offset-md-10">
-                  <a class="btn btn-primary" href="seller_baseinformation.php" role="button">新增商品</a>
+                  <a class="btn btn-primary" href="create_commodity.php" role="button">新增商品</a>
                   </div>
               </div>
               <div class="row">
