@@ -93,7 +93,8 @@
             <hr>
             <?php $price = 0;
             $sname = $db->execute("SELECT * FROM p_order WHERE p_username = ?;", array($_SESSION['username']));
-            for($i = 0 ; $i < $db->getRowCount() ; $i++) {
+            $pnum = $db->getRowCount();
+            for($i = 0 ; $i < $pnum ; $i++) {
                 $result = $db->execute("SELECT * FROM items WHERE order_no = ?;", array($sname[$i]['order_no']));
                 for($j = 0 ; $j < $db->getRowCount() ; $j++) { 
                     $price += $result[$j]['price'] * $result[$j]['amount'];
