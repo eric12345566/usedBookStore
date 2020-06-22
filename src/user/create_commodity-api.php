@@ -45,11 +45,11 @@
 
   if($db->getRowCount()) {
     echo '<script type="text/javascript">alert("新增書本商品成功");</script>'; ?>
-    <script type="text/javascript">window.location.href="create_commodity.php"</script>; //重新導向
+    <script type="text/javascript">window.location.href="seller_baseinformation.php"</script>; //重新導向
     <?php 
   } else {
     echo '<script type="text/javascript">alert("新增書本商品失敗");</script>'; ?>
-    <script type="text/javascript">window.location.href="create_commodity.php"</script>; //重新導向
+    <script type="text/javascript">window.location.href="seller_baseinformation.php"</script>; //重新導向
     <?php   
   }
 
