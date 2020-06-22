@@ -9,6 +9,7 @@
 
   if(isset($_GET['id'])){
     $id = $_GET['id'];
+    echo $id;
     $result = $db->execute("SELECT * FROM p_order WHERE order_no = ?;", array($id));
     //echo $db->getRowCount()."<br />";
     
@@ -104,8 +105,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-4">
           <h4 style="margin-top: 5em;">交易訂單</h4>
-          <span id="Orderlabel"
-            >訂單編號:<span id="Ordernumber"><?php echo $result[0]['order_no'] ?></span></span
+          <span id="Orderlabel">訂單編號:<span id="Ordernumber"><?php echo $result[0]['order_no'] ?></span></span
           >
         </div>
       </div>

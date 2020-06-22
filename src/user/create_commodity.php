@@ -202,7 +202,7 @@
                   <!--右邊區塊-->
                     <div class="form-group">
                     <form method="post" action="create_commodity-api.php" enctype = "multipart/form-data">
-                      <input type="file" name="book_img" class="form-control-file" id="exampleFormControlFile1">
+                      <input type="file" name="book_img" class="form-control-file" id="exampleFormControlFile1" accept=".jpg , .jpeg">
                     </div>
                   <p
                     id="text1"
