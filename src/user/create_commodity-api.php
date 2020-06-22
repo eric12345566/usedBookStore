@@ -20,7 +20,8 @@
   $publisher = $_POST['publisher'];
   $nowDatetime = date("Y-m-d H:s:i");
   $nowDatetimeStr = strtotime($nowDatetime );
-
+  
+  
   if ($_FILES["book_img"]["size"] > 0){
     //開啟圖片檔
     $files = fopen($_FILES["book_img"]["tmp_name"], "rb");
@@ -31,15 +32,17 @@
     // 圖片檔案資料編碼
     $fileContents = base64_encode($fileContent);
     } else {
-      echo "<script>alert('警告: 檔案過大，無法儲存'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
+      echo "<script>alert('警告: 檔案過大，或無上傳檔案，無法儲存'); location.href = 'http://localhost/eric12345566/src/user/register.php';history.go(-1);</script>";
       exit;
     }
 
     //TODO 在完成訂單的時侯，取得product_id，放回photo的product_no
-    $result1 = $db->execute("INSERT INTO photo (product_no,base64) VALUES(?,?)",array(11,$fileContents)) ;
     $result = $db->execute("INSERT INTO book_product (book_name,ISBN,publisher,avialiable,price,b_language,publish_date,exterior,stock,author,introduce,username,set_time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"
             ,array($book_name,$ISBN,$publisher,1,$price,$b_language,$publish_date,$exterior,$stock,$author,$introduce,$_SESSION['username'],date("Y/m/d")));
-  
+    $pno = $db->getLastId();
+    $result1 = $db->execute("INSERT INTO photo (product_no,base64) VALUES(?,?)",array($pno,$fileContents));
+
+
   if($db->getRowCount()) {
     echo '<script type="text/javascript">alert("新增書本商品成功");</script>'; ?>
     <script type="text/javascript">window.location.href="create_commodity.php"</script>; //重新導向
